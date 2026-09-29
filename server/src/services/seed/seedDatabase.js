@@ -29,9 +29,14 @@ export async function seedDatabase({ demoPassword, now = new Date(), log = () =>
   const start = addMinutes(end, -historyMin);
   const at = (tMin) => addMinutes(start, tMin);
 
+  // Let Mongoose finish its automatic collection/index setup before dropping underneath it.
+  const models = mongoose.modelNames().map((n) => mongoose.model(n));
+  await Promise.all(models.map((m) => m.init().catch(() => {})));
   await mongoose.connection.dropDatabase();
-  await Promise.all(mongoose.modelNames().map((n) => mongoose.model(n).createCollection()));
-  await Promise.all(mongoose.modelNames().map((n) => mongoose.model(n).syncIndexes()));
+  for (const m of models) {
+    await m.createCollection();
+    await m.syncIndexes();
+  }
 
   siteDoc.historyStartAt = start;
   siteDoc.simulated = true;
