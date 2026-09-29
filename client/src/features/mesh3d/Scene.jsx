@@ -5,6 +5,10 @@ import { useTimeStore } from '../../store/timeStore.js';
 import { useUiStore } from '../../store/uiStore.js';
 import { useReducedMotion } from '../../hooks/useMediaQuery.js';
 import { InlineError } from '../../ui/Panel.jsx';
+import { IntroOverlay } from '../intro/IntroOverlay.jsx';
+import { useIntroStore } from '../intro/introStore.js';
+import { meshOrder, nodeAppear } from '../intro/introTimeline.js';
+import { useIntroStages } from '../intro/useIntroTimeline.js';
 import { CameraRig } from './CameraRig.jsx';
 import { Contours } from './Contours.jsx';
 import { Legend } from './Legend.jsx';
@@ -38,9 +42,12 @@ function useTabVisible() {
 /**
  * The 3D site: terrain with contours, mined panels below, site features, nodes, links, packets and
  * zones. Renders on demand (only when something changes) and pauses while the tab is hidden.
- * `intro` (optional) carries the opening-animation stage values.
+ * The opening animation drives it through useIntroStages(); outside the intro every stage is 1.
  */
-export function Scene({ intro }) {
+export function Scene() {
+  const intro = useIntroStages();
+  // Exposed on the element for end-to-end tests: animation time, or "done".
+  const introT = useIntroStore((st) => (st.pending ? st.t.toFixed(2) : 'done'));
   const at = useTimeStore((st) => st.at);
   const { data: site } = useSite();
   const terrain = useDecodedTerrain(at);
@@ -79,6 +86,23 @@ export function Scene({ intro }) {
   );
   const layerOf = useCallback((id) => byId.get(id)?.meshLayer ?? null, [byId]);
 
+  // Tell the intro how far loading has got; it holds at the contour stage until the data is ready.
+  const loaded = [site, grid, nodeList, links.data, zones.data].filter(Boolean).length;
+  const dataReady = Boolean(model && nodeList);
+  useEffect(() => {
+    useIntroStore.getState().setData(dataReady, loaded / 5);
+  }, [dataReady, loaded]);
+
+  const order = useMemo(() => meshOrder(nodeList ?? []), [nodeList]);
+  const elapsed = intro.nodesElapsed;
+  const appear = useMemo(
+    () =>
+      elapsed === Infinity
+        ? undefined
+        : (n) => nodeAppear(order.get(n.id) ?? 0, order.size, elapsed),
+    [elapsed, order],
+  );
+
   if (terrain.isError) {
     return (
       <div className={s.region}>
@@ -89,11 +113,12 @@ export function Scene({ intro }) {
     );
   }
 
-  const st = intro ?? {};
+  const st = intro;
   return (
     <div
       className={s.region}
       aria-label="3D view of the site, its underground panels and sensor mesh"
+      data-intro-t={introT}
     >
       {model && (
         <Canvas
@@ -128,11 +153,11 @@ export function Scene({ intro }) {
             {nodeList && (
               <Nodes
                 nodes={nodeList}
-                appear={st.appear}
+                appear={appear}
                 unreachable={links.data?.degraded ? (links.data.down ?? []) : []}
               />
             )}
-            {layers.links && links.data && nodeList && (
+            {layers.links && links.data && nodeList && st.links > 0 && (
               <Links
                 linkState={links.data}
                 topOf={topOf}
@@ -140,24 +165,29 @@ export function Scene({ intro }) {
                 reveal={st.links ?? 1}
               />
             )}
-            {layers.packets && !reduced && at == null && links.data && (
+            {layers.packets && !reduced && at == null && links.data && st.links > 0.5 && (
               <Packets links={links.data.links} topOf={topOf} />
             )}
-            {layers.zones && <Zones zones={zones.data} opacity={st.zones ?? 1} />}
-            <CameraRig nodes={nodeList} zones={zones.data} />
+            {layers.zones && st.zones > 0 && <Zones zones={zones.data} opacity={st.zones} />}
+            <CameraRig
+              nodes={nodeList}
+              zones={zones.data}
+              introCamera={st.done ? null : st.camera}
+            />
             {view === 'top' && <ScaleProbe barRef={barRef} />}
           </SceneContext.Provider>
         </Canvas>
       )}
-      {!model && <p className={s.status}>Loading terrain…</p>}
-      {model && !nodeList && <p className={s.status}>Loading nodes…</p>}
-      {(st.ui ?? 1) > 0 && (
-        <>
+      {st.done && !model && <p className={s.status}>Loading terrain…</p>}
+      {st.done && model && !nodeList && <p className={s.status}>Loading nodes…</p>}
+      <IntroOverlay />
+      {st.ui > 0 && (
+        <div style={{ opacity: st.ui }}>
           <ColourAndLayers />
           <ViewAndExaggeration />
           <Legend theme={colours.theme} />
           {view === 'top' && <PlanOverlay barRef={barRef} />}
-        </>
+        </div>
       )}
     </div>
   );

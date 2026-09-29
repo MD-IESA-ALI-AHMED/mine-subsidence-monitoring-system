@@ -5,6 +5,8 @@ import { useSelectionStore } from '../../store/selectionStore.js';
 import { useUiStore } from '../../store/uiStore.js';
 import { IconButton } from '../../ui/Button.jsx';
 import { Drawer } from '../../ui/Overlay.jsx';
+import { slideIn } from '../intro/slideIn.js';
+import { useIntroController, useIntroUi } from '../intro/useIntroTimeline.js';
 import { ContextPanel, contextTitle } from './ContextPanel.jsx';
 import { LeftRail } from './LeftRail.jsx';
 import { SceneRegion } from './SceneRegion.jsx';
@@ -24,6 +26,8 @@ export default function OverviewPage() {
   const clear = useSelectionStore((st) => st.clear);
   const narrow = useMediaQuery('(max-width: 1279px)');
   const tiny = useMediaQuery('(max-width: 899px)');
+  useIntroController();
+  const ui = useIntroUi(true);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -40,7 +44,7 @@ export default function OverviewPage() {
 
   return (
     <div className={s.layout} style={style}>
-      <aside className={s.rail} aria-label="Moving zones and alerts">
+      <aside className={s.rail} aria-label="Moving zones and alerts" style={slideIn(ui, 'left')}>
         {railCollapsed && !tiny ? (
           <CollapsedStrip icon={PanelLeft} label="Show zones and alerts" onExpand={toggleRail} />
         ) : (
@@ -53,7 +57,7 @@ export default function OverviewPage() {
       </section>
 
       {!narrow && (
-        <aside className={s.panel} aria-label="Details">
+        <aside className={s.panel} aria-label="Details" style={slideIn(ui, 'right')}>
           {panelCollapsed ? (
             <CollapsedStrip icon={PanelRight} label="Show details panel" onExpand={togglePanel} />
           ) : (

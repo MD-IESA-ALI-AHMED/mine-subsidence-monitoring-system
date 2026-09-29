@@ -4,6 +4,8 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useLiveUpdates } from '../../hooks/useLiveUpdates.js';
 import { useStatus } from '../../services/queries.js';
 import { useLiveStore } from '../../store/liveStore.js';
+import { slideIn } from '../intro/slideIn.js';
+import { useIntroUi } from '../intro/useIntroTimeline.js';
 import { Toasts } from './Toasts.jsx';
 import { TopBar } from './TopBar.jsx';
 import s from './AppShell.module.css';
@@ -14,6 +16,7 @@ export function AppShell() {
   const navigate = useNavigate();
   const location = useLocation();
   const { data: status } = useStatus();
+  const introUi = useIntroUi(location.pathname === '/');
 
   const onAuthLost = useCallback(() => {
     qc.clear();
@@ -33,7 +36,9 @@ export function AppShell() {
 
   return (
     <div className={s.shell}>
-      <TopBar />
+      <div style={slideIn(introUi, 'top')}>
+        <TopBar />
+      </div>
       <main className={s.main}>
         <Outlet />
       </main>

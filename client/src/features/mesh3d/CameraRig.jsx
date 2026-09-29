@@ -39,7 +39,7 @@ function focusFor(sel, { nodes, zones, site, place }) {
 }
 
 /** Orbit controls with limits, view presets, easing to the selection, and keyboard shortcuts. */
-export function CameraRig({ nodes, zones, enabled = true }) {
+export function CameraRig({ nodes, zones, enabled = true, introCamera = null }) {
   const model = useSceneModel();
   const { frame } = model;
   const { camera, invalidate } = useThree();
@@ -72,10 +72,27 @@ export function CameraRig({ nodes, zones, enabled = true }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusSeq]);
 
+  // Opening animation: from a high top view down to the current view preset.
+  const introActive = introCamera != null;
+  useEffect(() => {
+    const c = controls.current;
+    if (!introActive || !c) return;
+    tween.current = null;
+    const end = viewPose(view, frame, [0, 0, 0], camera);
+    const top = viewPose('top', frame, [0, 0, 0], camera);
+    const from = new Vector3(top.position[0], top.position[1] * 1.6, top.position[2]);
+    camera.position.lerpVectors(from, new Vector3(...end.position), ease(introCamera));
+    c.target.set(0, 0, 0);
+    c.update();
+    invalidate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [introActive, introCamera]);
+
   useFrame(() => {
     const tw = tween.current;
     const c = controls.current;
-    if (!tw || !c) return;
+    if (introActive) tween.current = null;
+    if (!tw || !c || introActive) return;
     const t = tw.ms ? Math.min(1, (performance.now() - tw.start) / tw.ms) : 1;
     const k = ease(t);
     camera.position.lerpVectors(tw.from.position, tw.to.position, k);
@@ -128,7 +145,7 @@ export function CameraRig({ nodes, zones, enabled = true }) {
     <OrbitControls
       ref={controls}
       makeDefault
-      enabled={enabled}
+      enabled={enabled && !introActive}
       enableDamping={false}
       minPolarAngle={view === 'top' ? 0 : 10 * DEG}
       maxPolarAngle={80 * DEG}

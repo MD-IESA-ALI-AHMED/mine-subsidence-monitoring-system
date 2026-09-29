@@ -15,7 +15,9 @@ function LinkSet({ links, topOf, layerOf, opacity, reveal }) {
   const colourBy = useUiStore((s) => s.colourBy);
 
   const geo = useMemo(() => {
-    const byKind = (k) => links.filter((l) => l.kind === k);
+    // Ordered from the root outward, so a partial reveal traces the tree (opening animation).
+    const depth = (l) => layerOf(l.kind === 'mesh' ? l.from : l.to) ?? 9;
+    const byKind = (k) => links.filter((l) => l.kind === k).sort((a, b) => depth(a) - depth(b));
     const bg = colours.bg;
     const meshColour = (l) =>
       colourBy === 'meshLayer'

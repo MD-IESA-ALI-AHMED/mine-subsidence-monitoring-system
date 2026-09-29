@@ -1,0 +1,28 @@
+.overlay {
+  position: absolute;
+  left: var(--sp-6);
+  bottom: calc(var(--scrubber-h) + var(--sp-6));
+  z-index: 15;
+  pointer-events: none;
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  color: var(--text);
+}
+
+.track {
+  width: 160px;
+  height: 1px;
+  margin-top: var(--sp-2);
+  background: var(--line);
+  overflow: hidden;
+}
+
+.bar {
+  height: 1px;
+  background: var(--accent);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease);
+}

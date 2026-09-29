@@ -83,7 +83,8 @@ export function Nodes({ nodes, appear, unreachable = [] }) {
         const isHover =
           (hovered?.kind === 'node' && hovered.id === n.id) ||
           (selected?.kind === 'node' && selected.id === n.id);
-        const base = place(n.x, n.y, (1 - a) * 0.5 * NODE_SCALE);
+        // Opening animation: each node rises 0.5 m (scaled like the models) into place.
+        const base = place(n.x, n.y, -(1 - a) * 0.5 * NODE_SCALE);
         const colour = offlineLike(n)
           ? colours.offline
           : (colourFor(colourBy, metricOf(n), colours.theme) ?? colours.textFaint);
