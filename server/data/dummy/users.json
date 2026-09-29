@@ -1,0 +1,7 @@
+[
+  {
+    "name": "Duty Engineer",
+    "email": "demo@site01.local",
+    "password": "from DEMO_PASSWORD in server/.env"
+  }
+]

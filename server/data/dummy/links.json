@@ -1,0 +1,890 @@
+[
+  {
+    "_id": "espnow_primary:N-001:R-01",
+    "siteId": "site-01",
+    "from": "N-001",
+    "to": "R-01",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.51
+  },
+  {
+    "_id": "espnow_backup:N-001:R-02",
+    "siteId": "site-01",
+    "from": "N-001",
+    "to": "R-02",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.29
+  },
+  {
+    "_id": "espnow_primary:N-002:R-01",
+    "siteId": "site-01",
+    "from": "N-002",
+    "to": "R-01",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.56
+  },
+  {
+    "_id": "espnow_backup:N-002:R-02",
+    "siteId": "site-01",
+    "from": "N-002",
+    "to": "R-02",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.09
+  },
+  {
+    "_id": "espnow_primary:N-003:R-02",
+    "siteId": "site-01",
+    "from": "N-003",
+    "to": "R-02",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.24
+  },
+  {
+    "_id": "espnow_backup:N-003:R-03",
+    "siteId": "site-01",
+    "from": "N-003",
+    "to": "R-03",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.17
+  },
+  {
+    "_id": "espnow_primary:N-004:R-04",
+    "siteId": "site-01",
+    "from": "N-004",
+    "to": "R-04",
+    "kind": "espnow_primary",
+    "quality_0to1": 1
+  },
+  {
+    "_id": "espnow_backup:N-004:R-03",
+    "siteId": "site-01",
+    "from": "N-004",
+    "to": "R-03",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.09
+  },
+  {
+    "_id": "espnow_primary:N-005:R-03",
+    "siteId": "site-01",
+    "from": "N-005",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.31
+  },
+  {
+    "_id": "espnow_backup:N-005:R-04",
+    "siteId": "site-01",
+    "from": "N-005",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.14
+  },
+  {
+    "_id": "espnow_primary:N-006:R-02",
+    "siteId": "site-01",
+    "from": "N-006",
+    "to": "R-02",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.44
+  },
+  {
+    "_id": "espnow_backup:N-006:R-01",
+    "siteId": "site-01",
+    "from": "N-006",
+    "to": "R-01",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.22
+  },
+  {
+    "_id": "espnow_primary:N-007:R-04",
+    "siteId": "site-01",
+    "from": "N-007",
+    "to": "R-04",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.41
+  },
+  {
+    "_id": "espnow_backup:N-007:R-03",
+    "siteId": "site-01",
+    "from": "N-007",
+    "to": "R-03",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.26
+  },
+  {
+    "_id": "espnow_primary:N-008:R-03",
+    "siteId": "site-01",
+    "from": "N-008",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.41
+  },
+  {
+    "_id": "espnow_backup:N-008:R-04",
+    "siteId": "site-01",
+    "from": "N-008",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.15
+  },
+  {
+    "_id": "espnow_primary:N-009:R-03",
+    "siteId": "site-01",
+    "from": "N-009",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.42
+  },
+  {
+    "_id": "espnow_backup:N-009:R-04",
+    "siteId": "site-01",
+    "from": "N-009",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.23
+  },
+  {
+    "_id": "espnow_primary:N-010:R-03",
+    "siteId": "site-01",
+    "from": "N-010",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.38
+  },
+  {
+    "_id": "espnow_backup:N-010:R-04",
+    "siteId": "site-01",
+    "from": "N-010",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.32
+  },
+  {
+    "_id": "espnow_primary:N-011:R-03",
+    "siteId": "site-01",
+    "from": "N-011",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.51
+  },
+  {
+    "_id": "espnow_backup:N-011:R-04",
+    "siteId": "site-01",
+    "from": "N-011",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.26
+  },
+  {
+    "_id": "espnow_primary:N-012:R-03",
+    "siteId": "site-01",
+    "from": "N-012",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.55
+  },
+  {
+    "_id": "espnow_backup:N-012:R-04",
+    "siteId": "site-01",
+    "from": "N-012",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.18
+  },
+  {
+    "_id": "espnow_primary:N-013:R-01",
+    "siteId": "site-01",
+    "from": "N-013",
+    "to": "R-01",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.47
+  },
+  {
+    "_id": "espnow_backup:N-013:R-02",
+    "siteId": "site-01",
+    "from": "N-013",
+    "to": "R-02",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.45
+  },
+  {
+    "_id": "espnow_primary:N-014:R-01",
+    "siteId": "site-01",
+    "from": "N-014",
+    "to": "R-01",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.5
+  },
+  {
+    "_id": "espnow_backup:N-014:R-02",
+    "siteId": "site-01",
+    "from": "N-014",
+    "to": "R-02",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.14
+  },
+  {
+    "_id": "espnow_primary:N-015:R-02",
+    "siteId": "site-01",
+    "from": "N-015",
+    "to": "R-02",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.35
+  },
+  {
+    "_id": "espnow_backup:N-015:R-03",
+    "siteId": "site-01",
+    "from": "N-015",
+    "to": "R-03",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.29
+  },
+  {
+    "_id": "espnow_primary:N-016:R-02",
+    "siteId": "site-01",
+    "from": "N-016",
+    "to": "R-02",
+    "kind": "espnow_primary",
+    "quality_0to1": 1
+  },
+  {
+    "_id": "espnow_backup:N-016:R-01",
+    "siteId": "site-01",
+    "from": "N-016",
+    "to": "R-01",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.19
+  },
+  {
+    "_id": "espnow_primary:N-017:R-04",
+    "siteId": "site-01",
+    "from": "N-017",
+    "to": "R-04",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.45
+  },
+  {
+    "_id": "espnow_backup:N-017:R-03",
+    "siteId": "site-01",
+    "from": "N-017",
+    "to": "R-03",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.16
+  },
+  {
+    "_id": "espnow_primary:N-018:R-03",
+    "siteId": "site-01",
+    "from": "N-018",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.89
+  },
+  {
+    "_id": "espnow_backup:N-018:R-04",
+    "siteId": "site-01",
+    "from": "N-018",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.1
+  },
+  {
+    "_id": "espnow_primary:N-019:R-03",
+    "siteId": "site-01",
+    "from": "N-019",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.5
+  },
+  {
+    "_id": "espnow_backup:N-019:R-04",
+    "siteId": "site-01",
+    "from": "N-019",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.3
+  },
+  {
+    "_id": "espnow_primary:N-020:R-02",
+    "siteId": "site-01",
+    "from": "N-020",
+    "to": "R-02",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.33
+  },
+  {
+    "_id": "espnow_backup:N-020:R-07",
+    "siteId": "site-01",
+    "from": "N-020",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.26
+  },
+  {
+    "_id": "espnow_primary:N-021:R-05",
+    "siteId": "site-01",
+    "from": "N-021",
+    "to": "R-05",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.37
+  },
+  {
+    "_id": "espnow_backup:N-021:R-03",
+    "siteId": "site-01",
+    "from": "N-021",
+    "to": "R-03",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.33
+  },
+  {
+    "_id": "espnow_primary:N-022:R-08",
+    "siteId": "site-01",
+    "from": "N-022",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.26
+  },
+  {
+    "_id": "espnow_backup:N-022:R-02",
+    "siteId": "site-01",
+    "from": "N-022",
+    "to": "R-02",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.25
+  },
+  {
+    "_id": "espnow_primary:N-023:R-08",
+    "siteId": "site-01",
+    "from": "N-023",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.33
+  },
+  {
+    "_id": "espnow_backup:N-023:R-01",
+    "siteId": "site-01",
+    "from": "N-023",
+    "to": "R-01",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.17
+  },
+  {
+    "_id": "espnow_primary:N-024:R-03",
+    "siteId": "site-01",
+    "from": "N-024",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.23
+  },
+  {
+    "_id": "espnow_backup:N-024:R-02",
+    "siteId": "site-01",
+    "from": "N-024",
+    "to": "R-02",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.19
+  },
+  {
+    "_id": "espnow_primary:N-025:R-03",
+    "siteId": "site-01",
+    "from": "N-025",
+    "to": "R-03",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.41
+  },
+  {
+    "_id": "espnow_backup:N-025:R-05",
+    "siteId": "site-01",
+    "from": "N-025",
+    "to": "R-05",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.17
+  },
+  {
+    "_id": "espnow_primary:N-026:R-05",
+    "siteId": "site-01",
+    "from": "N-026",
+    "to": "R-05",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.36
+  },
+  {
+    "_id": "espnow_backup:N-026:R-04",
+    "siteId": "site-01",
+    "from": "N-026",
+    "to": "R-04",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.12
+  },
+  {
+    "_id": "espnow_primary:N-027:R-05",
+    "siteId": "site-01",
+    "from": "N-027",
+    "to": "R-05",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.74
+  },
+  {
+    "_id": "espnow_backup:N-027:R-06",
+    "siteId": "site-01",
+    "from": "N-027",
+    "to": "R-06",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.3
+  },
+  {
+    "_id": "espnow_primary:N-028:R-08",
+    "siteId": "site-01",
+    "from": "N-028",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.97
+  },
+  {
+    "_id": "espnow_backup:N-028:R-07",
+    "siteId": "site-01",
+    "from": "N-028",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.2
+  },
+  {
+    "_id": "espnow_primary:N-029:R-07",
+    "siteId": "site-01",
+    "from": "N-029",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.55
+  },
+  {
+    "_id": "espnow_backup:N-029:R-08",
+    "siteId": "site-01",
+    "from": "N-029",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.49
+  },
+  {
+    "_id": "espnow_primary:N-030:R-07",
+    "siteId": "site-01",
+    "from": "N-030",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.74
+  },
+  {
+    "_id": "espnow_backup:N-030:R-08",
+    "siteId": "site-01",
+    "from": "N-030",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.17
+  },
+  {
+    "_id": "espnow_primary:N-031:R-05",
+    "siteId": "site-01",
+    "from": "N-031",
+    "to": "R-05",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.61
+  },
+  {
+    "_id": "espnow_backup:N-031:R-06",
+    "siteId": "site-01",
+    "from": "N-031",
+    "to": "R-06",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.11
+  },
+  {
+    "_id": "espnow_primary:N-032:R-07",
+    "siteId": "site-01",
+    "from": "N-032",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.27
+  },
+  {
+    "_id": "espnow_backup:N-032:R-06",
+    "siteId": "site-01",
+    "from": "N-032",
+    "to": "R-06",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.26
+  },
+  {
+    "_id": "espnow_primary:N-033:R-06",
+    "siteId": "site-01",
+    "from": "N-033",
+    "to": "R-06",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.48
+  },
+  {
+    "_id": "espnow_backup:N-033:R-05",
+    "siteId": "site-01",
+    "from": "N-033",
+    "to": "R-05",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.24
+  },
+  {
+    "_id": "espnow_primary:N-034:R-07",
+    "siteId": "site-01",
+    "from": "N-034",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.83
+  },
+  {
+    "_id": "espnow_backup:N-034:R-08",
+    "siteId": "site-01",
+    "from": "N-034",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.36
+  },
+  {
+    "_id": "espnow_primary:N-035:R-07",
+    "siteId": "site-01",
+    "from": "N-035",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.55
+  },
+  {
+    "_id": "espnow_backup:N-035:R-08",
+    "siteId": "site-01",
+    "from": "N-035",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.5
+  },
+  {
+    "_id": "espnow_primary:N-036:R-08",
+    "siteId": "site-01",
+    "from": "N-036",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.65
+  },
+  {
+    "_id": "espnow_backup:N-036:R-07",
+    "siteId": "site-01",
+    "from": "N-036",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.42
+  },
+  {
+    "_id": "espnow_primary:N-037:R-08",
+    "siteId": "site-01",
+    "from": "N-037",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.55
+  },
+  {
+    "_id": "espnow_backup:N-037:R-07",
+    "siteId": "site-01",
+    "from": "N-037",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.39
+  },
+  {
+    "_id": "espnow_primary:N-038:R-07",
+    "siteId": "site-01",
+    "from": "N-038",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.51
+  },
+  {
+    "_id": "espnow_backup:N-038:R-08",
+    "siteId": "site-01",
+    "from": "N-038",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.44
+  },
+  {
+    "_id": "espnow_primary:N-039:R-07",
+    "siteId": "site-01",
+    "from": "N-039",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.69
+  },
+  {
+    "_id": "espnow_backup:N-039:R-08",
+    "siteId": "site-01",
+    "from": "N-039",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.32
+  },
+  {
+    "_id": "espnow_primary:N-040:R-08",
+    "siteId": "site-01",
+    "from": "N-040",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.43
+  },
+  {
+    "_id": "espnow_backup:N-040:R-07",
+    "siteId": "site-01",
+    "from": "N-040",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.33
+  },
+  {
+    "_id": "espnow_primary:N-041:R-07",
+    "siteId": "site-01",
+    "from": "N-041",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.51
+  },
+  {
+    "_id": "espnow_backup:N-041:R-08",
+    "siteId": "site-01",
+    "from": "N-041",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.27
+  },
+  {
+    "_id": "espnow_primary:N-042:R-07",
+    "siteId": "site-01",
+    "from": "N-042",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.44
+  },
+  {
+    "_id": "espnow_backup:N-042:R-08",
+    "siteId": "site-01",
+    "from": "N-042",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.34
+  },
+  {
+    "_id": "espnow_primary:N-043:R-07",
+    "siteId": "site-01",
+    "from": "N-043",
+    "to": "R-07",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.46
+  },
+  {
+    "_id": "espnow_backup:N-043:R-08",
+    "siteId": "site-01",
+    "from": "N-043",
+    "to": "R-08",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.12
+  },
+  {
+    "_id": "espnow_primary:N-044:R-08",
+    "siteId": "site-01",
+    "from": "N-044",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.38
+  },
+  {
+    "_id": "espnow_backup:N-044:R-07",
+    "siteId": "site-01",
+    "from": "N-044",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.14
+  },
+  {
+    "_id": "espnow_primary:N-045:R-06",
+    "siteId": "site-01",
+    "from": "N-045",
+    "to": "R-06",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.91
+  },
+  {
+    "_id": "espnow_backup:N-045:R-05",
+    "siteId": "site-01",
+    "from": "N-045",
+    "to": "R-05",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.14
+  },
+  {
+    "_id": "espnow_primary:N-046:R-06",
+    "siteId": "site-01",
+    "from": "N-046",
+    "to": "R-06",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.44
+  },
+  {
+    "_id": "espnow_backup:N-046:R-05",
+    "siteId": "site-01",
+    "from": "N-046",
+    "to": "R-05",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.29
+  },
+  {
+    "_id": "espnow_primary:N-047:R-05",
+    "siteId": "site-01",
+    "from": "N-047",
+    "to": "R-05",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.28
+  },
+  {
+    "_id": "espnow_backup:N-047:R-06",
+    "siteId": "site-01",
+    "from": "N-047",
+    "to": "R-06",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.14
+  },
+  {
+    "_id": "espnow_primary:N-048:R-06",
+    "siteId": "site-01",
+    "from": "N-048",
+    "to": "R-06",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.35
+  },
+  {
+    "_id": "espnow_backup:N-048:R-07",
+    "siteId": "site-01",
+    "from": "N-048",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.2
+  },
+  {
+    "_id": "espnow_primary:REF-1:R-04",
+    "siteId": "site-01",
+    "from": "REF-1",
+    "to": "R-04",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.25
+  },
+  {
+    "_id": "espnow_backup:REF-1:R-03",
+    "siteId": "site-01",
+    "from": "REF-1",
+    "to": "R-03",
+    "kind": "espnow_backup",
+    "quality_0to1": 0
+  },
+  {
+    "_id": "espnow_primary:REF-2:R-01",
+    "siteId": "site-01",
+    "from": "REF-2",
+    "to": "R-01",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.38
+  },
+  {
+    "_id": "espnow_backup:REF-2:R-02",
+    "siteId": "site-01",
+    "from": "REF-2",
+    "to": "R-02",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.02
+  },
+  {
+    "_id": "espnow_primary:REF-3:R-05",
+    "siteId": "site-01",
+    "from": "REF-3",
+    "to": "R-05",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.1
+  },
+  {
+    "_id": "espnow_backup:REF-3:R-06",
+    "siteId": "site-01",
+    "from": "REF-3",
+    "to": "R-06",
+    "kind": "espnow_backup",
+    "quality_0to1": 0
+  },
+  {
+    "_id": "espnow_primary:REF-4:R-08",
+    "siteId": "site-01",
+    "from": "REF-4",
+    "to": "R-08",
+    "kind": "espnow_primary",
+    "quality_0to1": 0.24
+  },
+  {
+    "_id": "espnow_backup:REF-4:R-07",
+    "siteId": "site-01",
+    "from": "REF-4",
+    "to": "R-07",
+    "kind": "espnow_backup",
+    "quality_0to1": 0.03
+  },
+  {
+    "_id": "mesh:R-02:R-01",
+    "siteId": "site-01",
+    "from": "R-02",
+    "to": "R-01",
+    "kind": "mesh",
+    "quality_0to1": 0.23
+  },
+  {
+    "_id": "mesh:R-03:R-02",
+    "siteId": "site-01",
+    "from": "R-03",
+    "to": "R-02",
+    "kind": "mesh",
+    "quality_0to1": 0.05
+  },
+  {
+    "_id": "mesh:R-04:R-03",
+    "siteId": "site-01",
+    "from": "R-04",
+    "to": "R-03",
+    "kind": "mesh",
+    "quality_0to1": 0.13
+  },
+  {
+    "_id": "mesh:R-05:R-03",
+    "siteId": "site-01",
+    "from": "R-05",
+    "to": "R-03",
+    "kind": "mesh",
+    "quality_0to1": 0.08
+  },
+  {
+    "_id": "mesh:R-06:R-07",
+    "siteId": "site-01",
+    "from": "R-06",
+    "to": "R-07",
+    "kind": "mesh",
+    "quality_0to1": 0.02
+  },
+  {
+    "_id": "mesh:R-07:R-02",
+    "siteId": "site-01",
+    "from": "R-07",
+    "to": "R-02",
+    "kind": "mesh",
+    "quality_0to1": 0.03
+  },
+  {
+    "_id": "mesh:R-08:R-07",
+    "siteId": "site-01",
+    "from": "R-08",
+    "to": "R-07",
+    "kind": "mesh",
+    "quality_0to1": 0.26
+  }
+]

@@ -1,0 +1,345 @@
+{
+  "seed": 25,
+  "history": {
+    "days": 7,
+    "stepMinutes": 10
+  },
+  "site": {
+    "id": "site-01",
+    "name": "Site 01",
+    "timezone": "Asia/Kolkata",
+    "origin": {
+      "lat": 23.7461,
+      "lon": 86.4146
+    },
+    "extent": {
+      "xMin": 0,
+      "xMax": 320,
+      "yMin": 0,
+      "yMax": 220
+    },
+    "ground": {
+      "base_m": 180,
+      "slopeX": 0.02,
+      "undulation_m": 0.8,
+      "waveX_m": 40,
+      "waveY_m": 55
+    },
+    "panels": [
+      {
+        "panelId": "P1",
+        "name": "P1 · longwall · 120 m",
+        "kind": "longwall",
+        "depth_m": 120,
+        "seamThickness_m": 3,
+        "polygon": [
+          [80, 60],
+          [260, 60],
+          [260, 150],
+          [80, 150]
+        ],
+        "extractionStatus": "extracting",
+        "advanceDirection": "+x",
+        "face": {
+          "start_m": 80,
+          "end_m": 260,
+          "rate_mPerDay": 5,
+          "startOffset_min": 0
+        },
+        "knothe": {
+          "subsidenceFactor": 0.7,
+          "tanBeta": 2,
+          "lagTau_days": 2
+        }
+      },
+      {
+        "panelId": "OW1",
+        "name": "OW1 · old workings · 35 m",
+        "kind": "bord_and_pillar",
+        "depth_m": 35,
+        "seamThickness_m": 2.4,
+        "polygon": [
+          [228, 166],
+          [272, 164],
+          [276, 186],
+          [270, 206],
+          [230, 204],
+          [224, 184]
+        ],
+        "extractionStatus": "extracted",
+        "advanceDirection": null
+      }
+    ],
+    "haulRoads": [
+      {
+        "id": "HR-1",
+        "y_m": 25,
+        "amplitude_m": 3,
+        "wave_m": 60
+      }
+    ],
+    "villageEdge": {
+      "id": "V-1",
+      "name": "Village edge",
+      "from": [210, 215],
+      "to": [300, 215]
+    },
+    "controlRoom": {
+      "x": 305,
+      "y": 12
+    },
+    "thresholds": {
+      "gateOn_mm": 5,
+      "gateOff_mm": 2,
+      "gateOnSpeed_mmPerDay": 3,
+      "gateOffSpeed_mmPerDay": 1.5,
+      "neighbourRadius_m": 45,
+      "minCorroborating": 3,
+      "holdMinutes": 360,
+      "limitSinking_mm": 100,
+      "limitSpeed_mmPerDay": 50,
+      "limitTilt_mmPerM": 3,
+      "zoneFeatureEps": 1,
+      "zoneFeatureScale": {
+        "change_mm": 10,
+        "speed_mmPerDay": 5,
+        "accel_mmPerDay2": 10
+      },
+      "acceleratingMin_mmPerDay2": 4,
+      "fastModeRadius_m": 30,
+      "offlineMissedIntervals": 3,
+      "severity": {
+        "weights": {
+          "sinking": 25,
+          "speed": 25,
+          "accel": 20,
+          "extent": 10,
+          "deviation": 15,
+          "proximity": 5
+        },
+        "extentRef_m2": 2000,
+        "deviationRef_mm": 50,
+        "proximity_m": 50,
+        "tierCutoffs": {
+          "watch": 25,
+          "warning": 45,
+          "critical": 70
+        },
+        "criticalBelow_h": 24
+      }
+    }
+  },
+  "layout": {
+    "jitter_m": 2,
+    "baseGrid": {
+      "xs": [50, 90, 130, 170, 210, 250, 290],
+      "ys": [35, 77.5, 120, 162.5, 205]
+    },
+    "denseClusters": [
+      {
+        "id": "OW1",
+        "centre": [250, 185],
+        "spacing_m": 12,
+        "cols": 3,
+        "rows": 3
+      },
+      {
+        "id": "P1-SE",
+        "points": [
+          [103, 48],
+          [115, 48],
+          [127, 48],
+          [109, 60],
+          [121, 60]
+        ]
+      }
+    ],
+    "rodSensors": [
+      [90, 77.5],
+      [90, 120],
+      [238, 185],
+      [262, 197]
+    ],
+    "relays": [
+      {
+        "id": "R-01",
+        "x": 272,
+        "y": 52
+      },
+      {
+        "id": "R-02",
+        "x": 215,
+        "y": 72
+      },
+      {
+        "id": "R-03",
+        "x": 120,
+        "y": 85
+      },
+      {
+        "id": "R-04",
+        "x": 54,
+        "y": 43
+      },
+      {
+        "id": "R-05",
+        "x": 72,
+        "y": 158
+      },
+      {
+        "id": "R-06",
+        "x": 125,
+        "y": 196
+      },
+      {
+        "id": "R-07",
+        "x": 224,
+        "y": 172
+      },
+      {
+        "id": "R-08",
+        "x": 280,
+        "y": 165
+      }
+    ],
+    "meshRange_m": 110,
+    "references": [
+      {
+        "id": "REF-1",
+        "x": 8,
+        "y": 8,
+        "rtk": true
+      },
+      {
+        "id": "REF-2",
+        "x": 312,
+        "y": 40,
+        "rtk": false
+      },
+      {
+        "id": "REF-3",
+        "x": 8,
+        "y": 212,
+        "rtk": true
+      },
+      {
+        "id": "REF-4",
+        "x": 314,
+        "y": 212,
+        "rtk": false
+      }
+    ]
+  },
+  "signals": {
+    "tiltNoise_urad": 8,
+    "thermalLean_urad": 25,
+    "thermalLag_min": 60,
+    "tempMin_C": 22,
+    "tempMax_C": 48,
+    "tempPeakHour": 15,
+    "tempDayVariation_C": 2,
+    "sinkingWhiteNoise_mm": 0.02,
+    "sinkingDrift": [
+      {
+        "amp_mm": 0.06,
+        "period_h": 31
+      },
+      {
+        "amp_mm": 0.015,
+        "period_h": 13
+      }
+    ],
+    "sinkingSigma_mm": 0.4,
+    "speedWindowReadings": 6,
+    "accelWindowReadings": 36,
+    "sensorBattery": {
+      "start_mV": [3900, 4100],
+      "drain_mVPerDay": [6, 12],
+      "fastModeDrainFactor": 4
+    },
+    "relayBattery": {
+      "min_mV": 3650,
+      "max_mV": 4150,
+      "solarPeak_mV": 6200,
+      "sunrise_h": 6,
+      "sunset_h": 18.25
+    },
+    "rssi": {
+      "p0_dBm": -30,
+      "exponent": 3.2,
+      "noise_dB": 2
+    },
+    "pressure": {
+      "sea_Pa": 101325,
+      "tide_Pa": 110,
+      "drift_Pa": 250
+    },
+    "rodAnchorRatio": 0.92
+  },
+  "scenarios": {
+    "A_longwallTrough": {
+      "panelId": "P1"
+    },
+    "B_excessSinking": {
+      "cluster": "P1-SE",
+      "centre": [115, 54],
+      "radius_m": 20,
+      "extraFraction": 0.3,
+      "fromDay": 4,
+      "rampDays": 0.5
+    },
+    "C_acceleratingOldWorkings": {
+      "cluster": "OW1",
+      "centre": [252, 187],
+      "radius_m": 19,
+      "onsetDay": 5,
+      "onsetRamp_h": 8,
+      "failureDay": 8.5,
+      "targetAtDay7_mm": 48,
+      "postFailureTau_days": 0.4,
+      "postFailureStart_h": 2
+    },
+    "D_dailyBlasts": {
+      "time_h": 13.5,
+      "source": [160, 10],
+      "charge_kg": 60,
+      "K": 200,
+      "beta": 1.6,
+      "fDom_Hz": 14,
+      "minPpv_mmps": 0.3
+    },
+    "E_seatingShift": {
+      "nodeId": "N-031",
+      "blastDay": 3,
+      "tiltStepX_urad": 400
+    },
+    "F_haulTrucks": {
+      "withinRoad_m": 15,
+      "everyMinutes": 40,
+      "jitterMinutes": 8,
+      "startHour": 6,
+      "endHour": 22,
+      "duration_min": [2, 5],
+      "tiltSpike_urad": [60, 160],
+      "pga_mg": [6, 18],
+      "speed_mPerMin": 330
+    },
+    "G_silentAfterRise": {
+      "nearest": [250, 185],
+      "silentFromDay": 6.8
+    },
+    "H_lowBattery": {
+      "nearest": [290, 77.5],
+      "start_mV": 3290,
+      "drain_mVPerDay": 150,
+      "cutoff_mV": 3000
+    },
+    "I_rootFailure": {
+      "day": 5,
+      "fromHour": 10,
+      "toHour": 13,
+      "failedRoot": "R-01",
+      "newRoot": "R-02"
+    }
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "_id": "site-01",
+  "name": "Site 01",
+  "timezone": "Asia/Kolkata",
+  "crs": "local-metres",
+  "origin": {
+    "lat": 23.7461,
+    "lon": 86.4146
+  },
+  "extent": {
+    "xMin": 0,
+    "xMax": 320,
+    "yMin": 0,
+    "yMax": 220
+  },
+  "ground": {
+    "base_m": 180,
+    "slopeX": 0.02,
+    "undulation_m": 0.8,
+    "waveX_m": 40,
+    "waveY_m": 55
+  },
+  "panels": [
+    {
+      "panelId": "P1",
+      "name": "P1 · longwall · 120 m",
+      "kind": "longwall",
+      "depth_m": 120,
+      "seamThickness_m": 3,
+      "polygon": [
+        [
+          80,
+          60
+        ],
+        [
+          260,
+          60
+        ],
+        [
+          260,
+          150
+        ],
+        [
+          80,
+          150
+        ]
+      ],
+      "extractionStatus": "extracting",
+      "advanceDirection": "+x",
+      "face": {
+        "start_m": 80,
+        "end_m": 260,
+        "rate_mPerDay": 5,
+        "startOffset_min": 0
+      },
+      "knothe": {
+        "subsidenceFactor": 0.7,
+        "tanBeta": 2,
+        "lagTau_days": 2
+      }
+    },
+    {
+      "panelId": "OW1",
+      "name": "OW1 · old workings · 35 m",
+      "kind": "bord_and_pillar",
+      "depth_m": 35,
+      "seamThickness_m": 2.4,
+      "polygon": [
+        [
+          228,
+          166
+        ],
+        [
+          272,
+          164
+        ],
+        [
+          276,
+          186
+        ],
+        [
+          270,
+          206
+        ],
+        [
+          230,
+          204
+        ],
+        [
+          224,
+          184
+        ]
+      ],
+      "extractionStatus": "extracted",
+      "advanceDirection": null
+    }
+  ],
+  "haulRoads": [
+    {
+      "id": "HR-1",
+      "polyline": [
+        [
+          0,
+          25
+        ],
+        [
+          10,
+          25.5
+        ],
+        [
+          20,
+          25.98
+        ],
+        [
+          30,
+          26.44
+        ],
+        [
+          40,
+          26.86
+        ],
+        [
+          50,
+          27.22
+        ],
+        [
+          60,
+          27.52
+        ],
+        [
+          70,
+          27.76
+        ],
+        [
+          80,
+          27.92
+        ],
+        [
+          90,
+          27.99
+        ],
+        [
+          100,
+          27.99
+        ],
+        [
+          110,
+          27.9
+        ],
+        [
+          120,
+          27.73
+        ],
+        [
+          130,
+          27.48
+        ],
+        [
+          140,
+          27.17
+        ],
+        [
+          150,
+          26.8
+        ],
+        [
+          160,
+          26.37
+        ],
+        [
+          170,
+          25.91
+        ],
+        [
+          180,
+          25.42
+        ],
+        [
+          190,
+          24.92
+        ],
+        [
+          200,
+          24.43
+        ],
+        [
+          210,
+          23.95
+        ],
+        [
+          220,
+          23.5
+        ],
+        [
+          230,
+          23.09
+        ],
+        [
+          240,
+          22.73
+        ],
+        [
+          250,
+          22.44
+        ],
+        [
+          260,
+          22.21
+        ],
+        [
+          270,
+          22.07
+        ],
+        [
+          280,
+          22
+        ],
+        [
+          290,
+          22.02
+        ],
+        [
+          300,
+          22.12
+        ],
+        [
+          310,
+          22.3
+        ],
+        [
+          320,
+          22.56
+        ]
+      ],
+      "width_m": 8
+    }
+  ],
+  "villageEdge": {
+    "id": "V-1",
+    "name": "Village edge",
+    "polyline": [
+      [
+        210,
+        215
+      ],
+      [
+        300,
+        215
+      ]
+    ]
+  },
+  "controlRoom": {
+    "x": 305,
+    "y": 12
+  },
+  "thresholds": {
+    "gateOn_mm": 5,
+    "gateOff_mm": 2,
+    "gateOnSpeed_mmPerDay": 3,
+    "gateOffSpeed_mmPerDay": 1.5,
+    "neighbourRadius_m": 45,
+    "minCorroborating": 3,
+    "holdMinutes": 360,
+    "limitSinking_mm": 100,
+    "limitSpeed_mmPerDay": 50,
+    "limitTilt_mmPerM": 3,
+    "zoneFeatureEps": 1,
+    "zoneFeatureScale": {
+      "change_mm": 10,
+      "speed_mmPerDay": 5,
+      "accel_mmPerDay2": 10
+    },
+    "acceleratingMin_mmPerDay2": 4,
+    "fastModeRadius_m": 30,
+    "offlineMissedIntervals": 3,
+    "severity": {
+      "weights": {
+        "sinking": 25,
+        "speed": 25,
+        "accel": 20,
+        "extent": 10,
+        "deviation": 15,
+        "proximity": 5
+      },
+      "extentRef_m2": 2000,
+      "deviationRef_mm": 50,
+      "proximity_m": 50,
+      "tierCutoffs": {
+        "watch": 25,
+        "warning": 45,
+        "critical": 70
+      },
+      "criticalBelow_h": 24
+    }
+  },
+  "blastSource": [
+    160,
+    10
+  ]
+}

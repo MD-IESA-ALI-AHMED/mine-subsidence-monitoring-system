@@ -1,0 +1,1662 @@
+[
+  {
+    "_id": "EV-truck-0-1",
+    "kind": "vehicle_transient",
+    "tOffset_min": 400,
+    "nodeIds": [
+      "N-001",
+      "N-002"
+    ],
+    "pga_mg": 10.5,
+    "ppv_mmps": 1.16,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-4",
+    "kind": "vehicle_transient",
+    "tOffset_min": 525,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-006"
+    ],
+    "pga_mg": 7.4,
+    "ppv_mmps": 0.82,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-5",
+    "kind": "vehicle_transient",
+    "tOffset_min": 566,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.8,
+    "ppv_mmps": 1.09,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-7",
+    "kind": "vehicle_transient",
+    "tOffset_min": 645,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 14.9,
+    "ppv_mmps": 1.65,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-8",
+    "kind": "vehicle_transient",
+    "tOffset_min": 677,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 6.1,
+    "ppv_mmps": 0.67,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-10",
+    "kind": "vehicle_transient",
+    "tOffset_min": 768,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 7.2,
+    "ppv_mmps": 0.81,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-11",
+    "kind": "vehicle_transient",
+    "tOffset_min": 800,
+    "nodeIds": [
+      "N-002"
+    ],
+    "pga_mg": 8,
+    "ppv_mmps": 0.88,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-blast-0",
+    "kind": "blast",
+    "tOffset_min": 810,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007",
+      "N-008",
+      "N-009",
+      "N-010",
+      "N-011",
+      "N-012",
+      "N-013",
+      "N-014",
+      "N-015",
+      "N-016",
+      "N-017",
+      "N-018",
+      "N-019",
+      "N-020",
+      "N-021",
+      "N-022",
+      "N-023",
+      "N-024",
+      "N-025",
+      "N-026",
+      "N-027",
+      "N-028",
+      "N-029",
+      "N-030",
+      "N-031",
+      "N-032",
+      "N-033",
+      "N-034",
+      "N-035",
+      "N-036",
+      "N-037",
+      "N-038",
+      "N-039",
+      "N-040",
+      "N-041",
+      "N-042",
+      "N-043",
+      "N-044",
+      "N-045",
+      "N-046",
+      "N-047",
+      "N-048"
+    ],
+    "pga_mg": 241.6,
+    "ppv_mmps": 26.95,
+    "classification": "blast",
+    "note": "Production blast, open-cast bench south of the site"
+  },
+  {
+    "_id": "EV-truck-0-13",
+    "kind": "vehicle_transient",
+    "tOffset_min": 877,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 17.8,
+    "ppv_mmps": 1.98,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-14",
+    "kind": "vehicle_transient",
+    "tOffset_min": 917,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 16.1,
+    "ppv_mmps": 1.79,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-18",
+    "kind": "vehicle_transient",
+    "tOffset_min": 1076,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 11.9,
+    "ppv_mmps": 1.33,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-21",
+    "kind": "vehicle_transient",
+    "tOffset_min": 1208,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 7.8,
+    "ppv_mmps": 0.87,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-0-22",
+    "kind": "vehicle_transient",
+    "tOffset_min": 1239,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 14.6,
+    "ppv_mmps": 1.63,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-1",
+    "kind": "vehicle_transient",
+    "tOffset_min": 1837,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 11.2,
+    "ppv_mmps": 1.25,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-3",
+    "kind": "vehicle_transient",
+    "tOffset_min": 1928,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 16.5,
+    "ppv_mmps": 1.84,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-4",
+    "kind": "vehicle_transient",
+    "tOffset_min": 1959,
+    "nodeIds": [
+      "N-001",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 16.7,
+    "ppv_mmps": 1.85,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-11",
+    "kind": "vehicle_transient",
+    "tOffset_min": 2237,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 7.7,
+    "ppv_mmps": 0.85,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-blast-1",
+    "kind": "blast",
+    "tOffset_min": 2250,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007",
+      "N-008",
+      "N-009",
+      "N-010",
+      "N-011",
+      "N-012",
+      "N-013",
+      "N-014",
+      "N-015",
+      "N-016",
+      "N-017",
+      "N-018",
+      "N-019",
+      "N-020",
+      "N-021",
+      "N-022",
+      "N-023",
+      "N-024",
+      "N-025",
+      "N-026",
+      "N-027",
+      "N-028",
+      "N-029",
+      "N-030",
+      "N-031",
+      "N-032",
+      "N-033",
+      "N-034",
+      "N-035",
+      "N-036",
+      "N-037",
+      "N-038",
+      "N-039",
+      "N-040",
+      "N-041",
+      "N-042",
+      "N-043",
+      "N-044",
+      "N-045",
+      "N-046",
+      "N-047",
+      "N-048"
+    ],
+    "pga_mg": 241.6,
+    "ppv_mmps": 26.95,
+    "classification": "blast",
+    "note": "Production blast, open-cast bench south of the site"
+  },
+  {
+    "_id": "EV-truck-1-12",
+    "kind": "vehicle_transient",
+    "tOffset_min": 2276,
+    "nodeIds": [
+      "N-001",
+      "N-002"
+    ],
+    "pga_mg": 8.6,
+    "ppv_mmps": 0.96,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-14",
+    "kind": "vehicle_transient",
+    "tOffset_min": 2367,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 10.9,
+    "ppv_mmps": 1.21,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-15",
+    "kind": "vehicle_transient",
+    "tOffset_min": 2400,
+    "nodeIds": [
+      "N-001",
+      "N-002"
+    ],
+    "pga_mg": 16.6,
+    "ppv_mmps": 1.84,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-16",
+    "kind": "vehicle_transient",
+    "tOffset_min": 2448,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 14,
+    "ppv_mmps": 1.56,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-17",
+    "kind": "vehicle_transient",
+    "tOffset_min": 2486,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 17,
+    "ppv_mmps": 1.89,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-1-19",
+    "kind": "vehicle_transient",
+    "tOffset_min": 2557,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 15.6,
+    "ppv_mmps": 1.73,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-0",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3246,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-006"
+    ],
+    "pga_mg": 6.3,
+    "ppv_mmps": 0.7,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-1",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3277,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 6.1,
+    "ppv_mmps": 0.68,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-5",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3439,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-006"
+    ],
+    "pga_mg": 9.9,
+    "ppv_mmps": 1.1,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-6",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3479,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 12.8,
+    "ppv_mmps": 1.42,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-7",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3519,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-006"
+    ],
+    "pga_mg": 6.3,
+    "ppv_mmps": 0.7,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-8",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3566,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 16.1,
+    "ppv_mmps": 1.78,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-9",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3596,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 15.5,
+    "ppv_mmps": 1.72,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-blast-2",
+    "kind": "blast",
+    "tOffset_min": 3690,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007",
+      "N-008",
+      "N-009",
+      "N-010",
+      "N-011",
+      "N-012",
+      "N-013",
+      "N-014",
+      "N-015",
+      "N-016",
+      "N-017",
+      "N-018",
+      "N-019",
+      "N-020",
+      "N-021",
+      "N-022",
+      "N-023",
+      "N-024",
+      "N-025",
+      "N-026",
+      "N-027",
+      "N-028",
+      "N-029",
+      "N-030",
+      "N-031",
+      "N-032",
+      "N-033",
+      "N-034",
+      "N-035",
+      "N-036",
+      "N-037",
+      "N-038",
+      "N-039",
+      "N-040",
+      "N-041",
+      "N-042",
+      "N-043",
+      "N-044",
+      "N-045",
+      "N-046",
+      "N-047",
+      "N-048"
+    ],
+    "pga_mg": 241.6,
+    "ppv_mmps": 26.95,
+    "classification": "blast",
+    "note": "Production blast, open-cast bench south of the site"
+  },
+  {
+    "_id": "EV-truck-2-12",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3728,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 15.4,
+    "ppv_mmps": 1.71,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-17",
+    "kind": "vehicle_transient",
+    "tOffset_min": 3919,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 11.2,
+    "ppv_mmps": 1.25,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-19",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4008,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 7.4,
+    "ppv_mmps": 0.82,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-22",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4127,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 14,
+    "ppv_mmps": 1.56,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-2-23",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4166,
+    "nodeIds": [
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 17.7,
+    "ppv_mmps": 1.97,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-1",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4726,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 6.5,
+    "ppv_mmps": 0.72,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-2",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4760,
+    "nodeIds": [
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 16.1,
+    "ppv_mmps": 1.78,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-4",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4837,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 13.3,
+    "ppv_mmps": 1.47,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-7",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4959,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.4,
+    "ppv_mmps": 1.05,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-8",
+    "kind": "vehicle_transient",
+    "tOffset_min": 4997,
+    "nodeIds": [
+      "N-001",
+      "N-002"
+    ],
+    "pga_mg": 10.6,
+    "ppv_mmps": 1.18,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-9",
+    "kind": "vehicle_transient",
+    "tOffset_min": 5037,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 12.2,
+    "ppv_mmps": 1.36,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-blast-3",
+    "kind": "blast",
+    "tOffset_min": 5130,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007",
+      "N-008",
+      "N-009",
+      "N-010",
+      "N-011",
+      "N-012",
+      "N-013",
+      "N-014",
+      "N-015",
+      "N-016",
+      "N-017",
+      "N-018",
+      "N-019",
+      "N-020",
+      "N-021",
+      "N-022",
+      "N-023",
+      "N-024",
+      "N-025",
+      "N-026",
+      "N-027",
+      "N-028",
+      "N-029",
+      "N-030",
+      "N-031",
+      "N-032",
+      "N-033",
+      "N-034",
+      "N-035",
+      "N-036",
+      "N-037",
+      "N-038",
+      "N-039",
+      "N-040",
+      "N-041",
+      "N-042",
+      "N-043",
+      "N-044",
+      "N-045",
+      "N-046",
+      "N-047",
+      "N-048"
+    ],
+    "pga_mg": 241.6,
+    "ppv_mmps": 26.95,
+    "classification": "blast",
+    "note": "Production blast, open-cast bench south of the site"
+  },
+  {
+    "_id": "EV-seat-3",
+    "kind": "seating_shift",
+    "tOffset_min": 5130,
+    "nodeIds": [
+      "N-031"
+    ],
+    "pga_mg": null,
+    "ppv_mmps": null,
+    "classification": "seating_shift",
+    "note": "Permanent tilt step of 400 µrad after the blast; node re-baselined, no ground movement"
+  },
+  {
+    "_id": "EV-truck-3-13",
+    "kind": "vehicle_transient",
+    "tOffset_min": 5195,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.6,
+    "ppv_mmps": 1.07,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-14",
+    "kind": "vehicle_transient",
+    "tOffset_min": 5247,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 12.6,
+    "ppv_mmps": 1.4,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-16",
+    "kind": "vehicle_transient",
+    "tOffset_min": 5319,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 13.1,
+    "ppv_mmps": 1.45,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-20",
+    "kind": "vehicle_transient",
+    "tOffset_min": 5479,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.7,
+    "ppv_mmps": 1.08,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-22",
+    "kind": "vehicle_transient",
+    "tOffset_min": 5558,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 6.5,
+    "ppv_mmps": 0.72,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-3-24",
+    "kind": "vehicle_transient",
+    "tOffset_min": 5637,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 11.4,
+    "ppv_mmps": 1.26,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-4-2",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6198,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 12.3,
+    "ppv_mmps": 1.37,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-4-4",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6277,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 12.2,
+    "ppv_mmps": 1.35,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-4-6",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6367,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 14.1,
+    "ppv_mmps": 1.57,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-4-8",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6435,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 6.6,
+    "ppv_mmps": 0.73,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-blast-4",
+    "kind": "blast",
+    "tOffset_min": 6570,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007",
+      "N-008",
+      "N-009",
+      "N-010",
+      "N-011",
+      "N-012",
+      "N-013",
+      "N-014",
+      "N-015",
+      "N-016",
+      "N-017",
+      "N-018",
+      "N-019",
+      "N-020",
+      "N-021",
+      "N-022",
+      "N-023",
+      "N-024",
+      "N-025",
+      "N-026",
+      "N-027",
+      "N-028",
+      "N-029",
+      "N-030",
+      "N-031",
+      "N-032",
+      "N-033",
+      "N-034",
+      "N-035",
+      "N-036",
+      "N-037",
+      "N-038",
+      "N-039",
+      "N-040",
+      "N-041",
+      "N-042",
+      "N-043",
+      "N-044",
+      "N-045",
+      "N-046",
+      "N-047",
+      "N-048"
+    ],
+    "pga_mg": 241.6,
+    "ppv_mmps": 26.95,
+    "classification": "blast",
+    "note": "Production blast, open-cast bench south of the site"
+  },
+  {
+    "_id": "EV-truck-4-15",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6716,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 10.5,
+    "ppv_mmps": 1.17,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-4-17",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6807,
+    "nodeIds": [
+      "N-004"
+    ],
+    "pga_mg": 16.5,
+    "ppv_mmps": 1.83,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-4-18",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6837,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 15.8,
+    "ppv_mmps": 1.75,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-4-22",
+    "kind": "vehicle_transient",
+    "tOffset_min": 6999,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 11.3,
+    "ppv_mmps": 1.26,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-1",
+    "kind": "vehicle_transient",
+    "tOffset_min": 7597,
+    "nodeIds": [
+      "N-004",
+      "N-007"
+    ],
+    "pga_mg": 17.3,
+    "ppv_mmps": 1.92,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-8",
+    "kind": "vehicle_transient",
+    "tOffset_min": 7876,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 10,
+    "ppv_mmps": 1.11,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-9",
+    "kind": "vehicle_transient",
+    "tOffset_min": 7920,
+    "nodeIds": [
+      "N-001",
+      "N-002"
+    ],
+    "pga_mg": 13.8,
+    "ppv_mmps": 1.54,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-blast-5",
+    "kind": "blast",
+    "tOffset_min": 8010,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007",
+      "N-008",
+      "N-009",
+      "N-010",
+      "N-011",
+      "N-012",
+      "N-013",
+      "N-014",
+      "N-015",
+      "N-016",
+      "N-017",
+      "N-018",
+      "N-019",
+      "N-020",
+      "N-021",
+      "N-022",
+      "N-023",
+      "N-024",
+      "N-025",
+      "N-026",
+      "N-027",
+      "N-028",
+      "N-029",
+      "N-030",
+      "N-031",
+      "N-032",
+      "N-033",
+      "N-034",
+      "N-035",
+      "N-036",
+      "N-037",
+      "N-038",
+      "N-039",
+      "N-040",
+      "N-041",
+      "N-042",
+      "N-043",
+      "N-044",
+      "N-045",
+      "N-046",
+      "N-047",
+      "N-048"
+    ],
+    "pga_mg": 241.6,
+    "ppv_mmps": 26.95,
+    "classification": "blast",
+    "note": "Production blast, open-cast bench south of the site"
+  },
+  {
+    "_id": "EV-truck-5-15",
+    "kind": "vehicle_transient",
+    "tOffset_min": 8167,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 17.5,
+    "ppv_mmps": 1.94,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-19",
+    "kind": "vehicle_transient",
+    "tOffset_min": 8325,
+    "nodeIds": [
+      "N-004"
+    ],
+    "pga_mg": 10.3,
+    "ppv_mmps": 1.15,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-20",
+    "kind": "vehicle_transient",
+    "tOffset_min": 8357,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.9,
+    "ppv_mmps": 1.1,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-22",
+    "kind": "vehicle_transient",
+    "tOffset_min": 8437,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.7,
+    "ppv_mmps": 1.08,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-23",
+    "kind": "vehicle_transient",
+    "tOffset_min": 8477,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 7.4,
+    "ppv_mmps": 0.82,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-5-24",
+    "kind": "vehicle_transient",
+    "tOffset_min": 8517,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.8,
+    "ppv_mmps": 1.09,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-2",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9086,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-005",
+      "N-006"
+    ],
+    "pga_mg": 8.1,
+    "ppv_mmps": 0.9,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-4",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9158,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 11.2,
+    "ppv_mmps": 1.24,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-5",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9200,
+    "nodeIds": [
+      "N-001",
+      "N-002"
+    ],
+    "pga_mg": 7.4,
+    "ppv_mmps": 0.83,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-6",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9239,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-007"
+    ],
+    "pga_mg": 12.8,
+    "ppv_mmps": 1.42,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-8",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9317,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9,
+    "ppv_mmps": 1,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-10",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9398,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 14.1,
+    "ppv_mmps": 1.57,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-11",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9440,
+    "nodeIds": [
+      "N-002"
+    ],
+    "pga_mg": 9.9,
+    "ppv_mmps": 1.11,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-blast-6",
+    "kind": "blast",
+    "tOffset_min": 9450,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007",
+      "N-008",
+      "N-009",
+      "N-010",
+      "N-011",
+      "N-012",
+      "N-013",
+      "N-014",
+      "N-015",
+      "N-016",
+      "N-017",
+      "N-018",
+      "N-019",
+      "N-020",
+      "N-021",
+      "N-022",
+      "N-023",
+      "N-024",
+      "N-025",
+      "N-026",
+      "N-027",
+      "N-028",
+      "N-029",
+      "N-030",
+      "N-031",
+      "N-032",
+      "N-033",
+      "N-034",
+      "N-035",
+      "N-036",
+      "N-037",
+      "N-038",
+      "N-039",
+      "N-040",
+      "N-041",
+      "N-042",
+      "N-043",
+      "N-044",
+      "N-045",
+      "N-046",
+      "N-047",
+      "N-048"
+    ],
+    "pga_mg": 241.6,
+    "ppv_mmps": 26.95,
+    "classification": "blast",
+    "note": "Production blast, open-cast bench south of the site"
+  },
+  {
+    "_id": "EV-truck-6-13",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9528,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 16.5,
+    "ppv_mmps": 1.83,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-14",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9558,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 8.8,
+    "ppv_mmps": 0.97,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-16",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9637,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 6.9,
+    "ppv_mmps": 0.77,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-17",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9686,
+    "nodeIds": [
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 13.3,
+    "ppv_mmps": 1.48,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, westbound; tilt recovered"
+  },
+  {
+    "_id": "EV-truck-6-18",
+    "kind": "vehicle_transient",
+    "tOffset_min": 9719,
+    "nodeIds": [
+      "N-001",
+      "N-002",
+      "N-003",
+      "N-004",
+      "N-005",
+      "N-006",
+      "N-007"
+    ],
+    "pga_mg": 9.6,
+    "ppv_mmps": 1.07,
+    "classification": "vehicle_transient",
+    "note": "Haul truck, eastbound; tilt recovered"
+  }
+]
