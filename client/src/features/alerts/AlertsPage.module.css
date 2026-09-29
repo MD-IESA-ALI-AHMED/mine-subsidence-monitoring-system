@@ -92,7 +92,7 @@
 
 .error {
   margin-top: var(--sp-2);
-  color: var(--tier-critical);
+  color: var(--tier-critical-text);
   font-size: var(--fs-xs);
 }
 

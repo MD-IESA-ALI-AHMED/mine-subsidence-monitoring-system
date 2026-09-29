@@ -17,6 +17,11 @@
   --tier-warning: #e08a2e;
   --tier-critical: #e5484d;
   --offline: #555e63;
+  /* Tier colours used as text: the specified hue, adjusted only where needed for WCAG AA (4.5:1). */
+  --tier-normal-text: var(--tier-normal);
+  --tier-watch-text: var(--tier-watch);
+  --tier-warning-text: var(--tier-warning);
+  --tier-critical-text: #ef6a6e;
   --changed: rgba(58, 169, 159, 0.16);
   --tint-critical: rgba(229, 72, 77, 0.12);
   --shadow-float: 0 4px 16px rgba(0, 0, 0, 0.45);
@@ -40,6 +45,10 @@
   --tier-warning: #c2610c;
   --tier-critical: #b42318;
   --offline: #a3a8aa;
+  --tier-normal-text: #586260;
+  --tier-watch-text: #776210;
+  --tier-warning-text: #9c4d08;
+  --tier-critical-text: var(--tier-critical);
   --changed: rgba(31, 94, 140, 0.12);
   --tint-critical: rgba(180, 35, 24, 0.08);
   --shadow-float: 0 4px 14px rgba(28, 33, 36, 0.14);

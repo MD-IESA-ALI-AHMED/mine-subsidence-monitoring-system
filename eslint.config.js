@@ -5,7 +5,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import prettier from 'eslint-config-prettier';
 
 export default [
-  { ignores: ['**/node_modules/**', '**/dist/**', '.data/**', 'client/playwright-report/**'] },
+  { ignores: ['**/node_modules/**', '**/dist/**', '.data/**', 'client/playwright-report/**', 'client/test-results/**'] },
   js.configs.recommended,
   {
     languageOptions: {

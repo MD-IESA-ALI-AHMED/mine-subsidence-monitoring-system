@@ -1,3 +1,4 @@
+import { markReady } from './bootstrapState.js';
 import { env } from './config/env.js';
 import { logger } from './config/logger.js';
 import { backfillHistory } from './services/pipeline/backfill.js';
@@ -25,5 +26,7 @@ export async function bootstrap() {
   await backfillHistory(siteId);
   const scheduler = startPipelineScheduler();
   const simulator = env.SIMULATOR ? await startSimulator(siteId) : null;
+  markReady();
+  logger.info('Ready');
   return { scheduler, simulator };
 }

@@ -48,11 +48,11 @@
 }
 
 .warn {
-  color: var(--tier-warning);
+  color: var(--tier-warning-text);
 }
 
 .crit {
-  color: var(--tier-critical);
+  color: var(--tier-critical-text);
 }
 
 @media (max-width: 1100px) {

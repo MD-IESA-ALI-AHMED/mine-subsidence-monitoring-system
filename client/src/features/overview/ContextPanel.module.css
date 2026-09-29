@@ -37,13 +37,13 @@
   border-bottom: 1px solid var(--line);
   background: var(--surface-2);
   font-size: var(--fs-xs);
-  color: var(--tier-watch);
+  color: var(--tier-watch-text);
 }
 
 .degradedLine {
   display: block;
   margin-top: 2px;
-  color: var(--tier-warning);
+  color: var(--tier-warning-text);
 }
 
 .body {

@@ -36,10 +36,13 @@ export function AppShell() {
 
   return (
     <div className={s.shell}>
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
       <div style={slideIn(introUi, 'top')}>
         <TopBar />
       </div>
-      <main className={s.main}>
+      <main className={s.main} id="main" tabIndex={-1}>
         <Outlet />
       </main>
       <Toasts />

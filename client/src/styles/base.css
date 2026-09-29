@@ -71,6 +71,24 @@ kbd {
   white-space: nowrap;
 }
 
+/* First focusable element: hidden until a keyboard user tabs to it. */
+.skip-link {
+  position: absolute;
+  top: var(--sp-2);
+  left: var(--sp-2);
+  z-index: 100;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-control);
+  background: var(--surface-2);
+  color: var(--text);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
 ::selection {
   background: var(--accent);
   color: var(--accent-text);

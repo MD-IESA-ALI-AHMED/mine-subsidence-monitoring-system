@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { isReady } from './bootstrapState.js';
 import { asyncHandler } from './middleware/asyncHandler.js';
 import { requireAuth } from './middleware/auth.js';
 import { apiLimiter } from './middleware/rateLimit.js';
@@ -21,6 +22,10 @@ export function apiRouter() {
   router.get(
     '/system/health',
     asyncHandler(async (_req, res) => res.json(await getHealth())),
+  );
+  // Readiness (no auth): 503 until the dummy site is loaded and the history replayed.
+  router.get('/system/ready', (_req, res) =>
+    isReady() ? res.json({ ready: true }) : res.status(503).json({ ready: false }),
   );
   router.use('/auth', authRoutes());
   router.use('/ingest', ingestRoutes());

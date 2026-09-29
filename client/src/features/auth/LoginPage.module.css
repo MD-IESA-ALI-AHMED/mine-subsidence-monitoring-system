@@ -63,7 +63,7 @@
 }
 
 .error {
-  color: var(--tier-critical);
+  color: var(--tier-critical-text);
   font-size: var(--fs-xs);
 }
 

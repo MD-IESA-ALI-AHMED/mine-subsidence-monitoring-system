@@ -5,7 +5,7 @@
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   font-weight: var(--fw-medium);
-  color: var(--tier-color);
+  color: var(--tier-text);
   white-space: nowrap;
 }
 
@@ -18,18 +18,23 @@
 
 .normal {
   --tier-color: var(--tier-normal);
+  --tier-text: var(--tier-normal-text);
 }
 .watch {
   --tier-color: var(--tier-watch);
+  --tier-text: var(--tier-watch-text);
 }
 .warning {
   --tier-color: var(--tier-warning);
+  --tier-text: var(--tier-warning-text);
 }
 .critical {
   --tier-color: var(--tier-critical);
+  --tier-text: var(--tier-critical-text);
 }
 .offline {
   --tier-color: var(--offline);
+  --tier-text: var(--text-muted);
 }
 
 .boxed {

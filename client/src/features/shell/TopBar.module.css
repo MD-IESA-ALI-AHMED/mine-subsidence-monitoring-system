@@ -117,13 +117,13 @@
 }
 
 .warning {
-  color: var(--tier-warning);
+  color: var(--tier-warning-text);
 }
 .warning .dot {
   background: var(--tier-warning);
 }
 .critical {
-  color: var(--tier-critical);
+  color: var(--tier-critical-text);
 }
 .critical .dot {
   background: var(--tier-critical);

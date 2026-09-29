@@ -60,7 +60,7 @@
 }
 
 .limitSoon {
-  color: var(--tier-critical);
+  color: var(--tier-critical-text);
 }
 
 .pulse {

@@ -67,7 +67,7 @@ export function Legend({ theme }) {
       )}
       <div className={s.keyRow} aria-label="Tiers">
         {TIERS.map((t) => (
-          <span key={t} className={s.keyItem} style={{ color: `var(--tier-${t})` }}>
+          <span key={t} className={s.keyItem} style={{ color: `var(--tier-${t}-text)` }}>
             {TIER_SHAPES[t]} <span className={s.keyText}>{TIER_LABELS[t].toLowerCase()}</span>
           </span>
         ))}
