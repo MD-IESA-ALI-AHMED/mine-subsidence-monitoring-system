@@ -1,0 +1,46 @@
+/* Dark control room (default) */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0d1012;
+  --surface-1: #13171a;
+  --surface-2: #1a1f23;
+  --line: #262d32;
+  --line-strong: #36404a;
+  --text: #e4e7e5;
+  --text-muted: #8d979c;
+  --text-faint: #5e676c;
+  --accent: #3aa99f;
+  --accent-text: #0d1012;
+  --tier-normal: #7e8b85;
+  --tier-watch: #c9b458;
+  --tier-warning: #e08a2e;
+  --tier-critical: #e5484d;
+  --offline: #555e63;
+  --changed: rgba(58, 169, 159, 0.16);
+  --tint-critical: rgba(229, 72, 77, 0.12);
+  --shadow-float: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* Light engineering sheet */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f3f1eb;
+  --surface-1: #faf9f5;
+  --surface-2: #ffffff;
+  --line: #ddd8cc;
+  --line-strong: #c4beb0;
+  --text: #1c2124;
+  --text-muted: #5c6468;
+  --text-faint: #8a9195;
+  --accent: #1f5e8c;
+  --accent-text: #ffffff;
+  --tier-normal: #6b7570;
+  --tier-watch: #9c8217;
+  --tier-warning: #c2610c;
+  --tier-critical: #b42318;
+  --offline: #a3a8aa;
+  --changed: rgba(31, 94, 140, 0.12);
+  --tint-critical: rgba(180, 35, 24, 0.08);
+  --shadow-float: 0 4px 14px rgba(28, 33, 36, 0.14);
+}

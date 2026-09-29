@@ -1,0 +1,11 @@
+# Optional: MongoDB 7 in Docker. Without Docker, `npm run dev` starts a local mongod itself
+# (see scripts/mongo.js). Either way the server only needs MONGO_URI.
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:

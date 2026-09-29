@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.data/
+.env
+*.local
+*.log
+client/test-results/
+client/playwright-report/
+.vite/
