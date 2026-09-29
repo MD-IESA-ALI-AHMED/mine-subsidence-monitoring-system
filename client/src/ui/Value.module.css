@@ -1,0 +1,27 @@
+.value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  border-radius: 2px;
+  transition: background var(--dur-changed) var(--ease);
+}
+
+.changed {
+  background: var(--changed);
+  transition: none;
+}
+
+.unit {
+  color: var(--text-muted);
+  font-size: 0.86em;
+  margin-left: 0.18em;
+}
+
+.lg {
+  font-size: var(--fs-lg);
+}
+
+.xl {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-medium);
+}

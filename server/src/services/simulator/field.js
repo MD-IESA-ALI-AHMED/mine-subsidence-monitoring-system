@@ -56,8 +56,11 @@ export function fieldSinking(ctx, x, y, t) {
   if (days > B.fromDay) {
     const w = bump(x, y, B.centre, B.radius_m);
     if (w > 1e-4) {
+      // 30 % more than Knothe from day 4, levelling off at maxExtra_mm (the weak ground settles).
       const grown = s - expectedSinking(ctx, x, y, B.fromDay * 1440);
-      s += w * B.extraFraction * Math.max(0, grown) * smoothstep((days - B.fromDay) / B.rampDays);
+      const raw = B.extraFraction * Math.max(0, grown);
+      const extra = B.maxExtra_mm * Math.tanh(raw / B.maxExtra_mm);
+      s += w * extra * smoothstep((days - B.fromDay) / B.rampDays);
     }
   }
   if (days > C.onsetDay) {

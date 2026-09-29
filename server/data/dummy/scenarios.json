@@ -101,6 +101,7 @@
       "limitTilt_mmPerM": 3,
       "zoneFeatureEps": 0.8,
       "zoneFeatureScale": {
+        "excess_mm": 20,
         "change_mm": 10,
         "speed_mmPerDay": 5,
         "accel_mmPerDay2": 10
@@ -286,6 +287,7 @@
       "centre": [115, 54],
       "radius_m": 20,
       "extraFraction": 0.3,
+      "maxExtra_mm": 90,
       "fromDay": 4,
       "rampDays": 0.5
     },

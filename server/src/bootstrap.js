@@ -2,6 +2,7 @@ import { env } from './config/env.js';
 import { logger } from './config/logger.js';
 import { backfillHistory } from './services/pipeline/backfill.js';
 import { startPipelineScheduler } from './services/pipeline/scheduler.js';
+import { syncDemoUser } from './services/seed/demoUser.js';
 import { isEmpty, seedDatabase } from './services/seed/seedDatabase.js';
 import { startSimulator } from './services/simulator/runSimulator.js';
 
@@ -18,6 +19,8 @@ export async function bootstrap() {
     }
     logger.info('Empty database: loading the dummy site');
     await seedDatabase({ demoPassword: env.DEMO_PASSWORD, log: (m) => logger.info(m) });
+  } else {
+    await syncDemoUser(env.DEMO_PASSWORD);
   }
   await backfillHistory(siteId);
   const scheduler = startPipelineScheduler();

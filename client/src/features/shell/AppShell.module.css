@@ -1,0 +1,13 @@
+.shell {
+  display: grid;
+  grid-template-rows: var(--topbar-h) 1fr;
+  height: 100%;
+  min-height: 0;
+  background: var(--bg);
+}
+
+.main {
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}

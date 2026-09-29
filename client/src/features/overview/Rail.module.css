@@ -1,0 +1,139 @@
+.rail {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+}
+
+.zones {
+  max-height: 55vh;
+}
+
+.list {
+  display: grid;
+  margin: 0 calc(-1 * var(--sp-2));
+  padding: 0;
+  list-style: none;
+}
+
+.zoneRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2px var(--sp-2);
+  width: 100%;
+  padding: var(--sp-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.zoneRow:hover {
+  background: var(--surface-2);
+}
+
+.zoneRow[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.key {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-medium);
+}
+
+.metrics {
+  grid-column: 2 / 4;
+  display: flex;
+  gap: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.limit {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.limitSoon {
+  color: var(--tier-critical);
+}
+
+.pulse {
+  animation: pulse 1.2s var(--ease) 1;
+}
+
+@keyframes pulse {
+  30% {
+    background: var(--tint-critical);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}
+
+.feed {
+  min-height: 0;
+}
+
+.feedItem {
+  display: grid;
+  grid-template-columns: 68px 16px 1fr;
+  gap: var(--sp-2);
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-xs);
+}
+
+.feedItem:last-child {
+  border-bottom: 0;
+}
+
+.feedTime {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.feedText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feedButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.feedButton:hover {
+  color: var(--accent);
+}
+
+.eventMark {
+  color: var(--text-faint);
+  text-align: center;
+}
+
+.viewAll {
+  font-size: var(--fs-xs);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.acked {
+  color: var(--text-muted);
+}

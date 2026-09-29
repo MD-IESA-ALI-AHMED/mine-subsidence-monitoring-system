@@ -99,8 +99,16 @@ export async function saveAlerts(siteId, inputs, assessed, now) {
   }
   const inZone = new Set(assessed.flatMap((z) => z.nodeIds));
   const limit = inputs.site.thresholds.limitSinking_mm;
-  for (const m of inputs.metrics.values()) {
-    if (!m.measuring || inZone.has(m.id) || !(m.excess_mm > limit)) continue;
+  const metrics = [...inputs.metrics.values()];
+  const radius = inputs.site.thresholds.neighbourRadius_m;
+  // "Inspect node" is for a lone outlier: no neighbour shows even half as much unexplained sinking.
+  const agreed = (m) =>
+    metrics.some(
+      (o) =>
+        o !== m && o.measuring && dist(o.x, o.y, m.x, m.y) <= radius && o.excess_mm > limit / 2,
+    );
+  for (const m of metrics) {
+    if (!m.measuring || inZone.has(m.id) || !(m.excess_mm > limit) || agreed(m)) continue;
     const alert = await raiseZoneAlert({
       siteId,
       kind: 'inspect_node',

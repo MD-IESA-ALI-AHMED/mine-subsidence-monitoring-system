@@ -1,0 +1,238 @@
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  height: var(--topbar-h);
+  padding: 0 var(--sp-3) 0 var(--sp-4);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-1);
+  min-width: 0;
+}
+
+.criticalLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--tier-critical);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+}
+
+.site {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  height: 28px;
+  padding: 0 var(--sp-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.site:hover {
+  border-color: var(--line);
+}
+
+.nav {
+  display: flex;
+  gap: var(--sp-4);
+  flex-shrink: 0;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  height: var(--topbar-h);
+  color: var(--text-muted);
+  font-size: var(--fs-base);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.link[aria-current='page'] {
+  color: var(--text);
+}
+
+.link[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.strip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tier-normal);
+}
+
+.warning {
+  color: var(--tier-warning);
+}
+.warning .dot {
+  background: var(--tier-warning);
+}
+.critical {
+  color: var(--tier-critical);
+}
+.critical .dot {
+  background: var(--tier-critical);
+}
+.muted {
+  padding: 0 var(--sp-1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+}
+
+.clock {
+  margin-right: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  font-variant-numeric: tabular-nums;
+}
+
+.clock small {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  margin-left: 0.3em;
+}
+
+.menuWrap {
+  position: relative;
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 28px;
+  padding: 0 var(--sp-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: none;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 50;
+  min-width: 200px;
+  padding: var(--sp-1) 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-float);
+}
+
+.menuHead {
+  padding: var(--sp-2) var(--sp-3);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.menuHead strong {
+  display: block;
+  color: var(--text);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: var(--sp-2) var(--sp-3);
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menuItem:hover,
+.menuItem:focus-visible {
+  background: var(--surface-1);
+}
+
+@media (max-width: 1100px) {
+  .panelName {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .bar {
+    gap: var(--sp-2);
+    padding: 0 var(--sp-2);
+  }
+  .nav {
+    gap: var(--sp-3);
+  }
+  .strip,
+  .clock small {
+    display: none;
+  }
+}

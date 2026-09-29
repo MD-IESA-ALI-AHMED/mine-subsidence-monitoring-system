@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { safeStorage } from './uiStore.js';
 
 const systemTheme = () =>
   typeof matchMedia === 'function' && matchMedia('(prefers-color-scheme: light)').matches
@@ -15,7 +16,7 @@ export const useThemeStore = create(
       toggle: () => set({ theme: get().resolved() === 'dark' ? 'light' : 'dark' }),
       setTheme: (theme) => set({ theme }),
     }),
-    { name: 'theme', partialize: (s) => ({ theme: s.theme }) },
+    { name: 'theme', storage: safeStorage, partialize: (s) => ({ theme: s.theme }) },
   ),
 );
 

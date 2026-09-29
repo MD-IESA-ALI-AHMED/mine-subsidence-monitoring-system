@@ -63,12 +63,9 @@ export function assignKeys(clusters, prevZones, site, at) {
   }
   clusters.forEach((c, i) => {
     if (keys[i]) return;
-    keys[i] = nameZone(
-      site,
-      c.centroid,
-      at,
-      new Set([...used, ...prevZones.map((z) => z.zoneKey)]),
-    );
+    // Keys of previous zones that matched nothing are free again, so a zone that reforms in
+    // the same place gets its old name back instead of Z-P1-2.
+    keys[i] = nameZone(site, c.centroid, at, used);
     used.add(keys[i]);
   });
   return keys;

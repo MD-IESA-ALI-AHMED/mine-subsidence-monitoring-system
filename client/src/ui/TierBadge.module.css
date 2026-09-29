@@ -1,0 +1,39 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--tier-color);
+  white-space: nowrap;
+}
+
+.shape {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+  line-height: 1;
+}
+
+.normal {
+  --tier-color: var(--tier-normal);
+}
+.watch {
+  --tier-color: var(--tier-watch);
+}
+.warning {
+  --tier-color: var(--tier-warning);
+}
+.critical {
+  --tier-color: var(--tier-critical);
+}
+.offline {
+  --tier-color: var(--offline);
+}
+
+.boxed {
+  padding: 1px var(--sp-2);
+  border: 1px solid var(--tier-color);
+  border-radius: var(--radius-control);
+}

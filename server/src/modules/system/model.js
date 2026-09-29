@@ -14,6 +14,8 @@ const systemStatusSchema = new mongoose.Schema(
     // Simulated "now" when the simulator drives the site; null for field data.
     siteClock: { type: Date, default: null },
     simulated: { type: Boolean, default: false },
+    // Site minutes per real minute (1 for field data), so clients can run the clock between updates.
+    simSpeed: { type: Number, default: 1 },
     model: {
       mode: { type: String, enum: ['remote', 'mock'] },
       reachable: { type: Boolean, default: true },

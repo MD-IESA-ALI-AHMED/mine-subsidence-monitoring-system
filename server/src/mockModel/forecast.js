@@ -108,8 +108,8 @@ export function forecastNode(node, request) {
   });
 
   // Time until the cautious (p10) unexplained sinking reaches the limit.
-  let tCrit = null;
-  for (let h = TCRIT_STEP_H; h <= MAX_H; h += TCRIT_STEP_H) {
+  let tCrit = e0 >= request.limits.sinking_mm ? 0 : null; // already past the limit
+  for (let h = TCRIT_STEP_H; tCrit == null && h <= MAX_H; h += TCRIT_STEP_H) {
     const band = halfBand(p50(h), s0, h);
     if (eCurve(h) - band >= request.limits.sinking_mm) {
       tCrit = h;

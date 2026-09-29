@@ -4,7 +4,10 @@ import { assignKeys } from './zoneKeys.js';
 
 const MIN_AREA_PER_NODE_M2 = 100;
 
-/** Candidate nodes for zones: ground sensors moving above the gate's closing level. */
+/**
+ * Candidate nodes for zones: ground sensors moving above the gate's closing level, plus ground
+ * that has already sunk beyond the limit (it stays a zone after it stops moving, until resolved).
+ */
 export function zoneCandidates(metrics, thresholds) {
   return metrics.filter(
     (m) =>
@@ -13,6 +16,7 @@ export function zoneCandidates(metrics, thresholds) {
       m.status !== 'offline' &&
       (Math.abs(m.change24h_mm ?? 0) >= thresholds.gateOff_mm ||
         (m.speed_mmPerDay ?? 0) >= thresholds.gateOffSpeed_mmPerDay ||
+        (m.excess_mm ?? 0) >= thresholds.limitSinking_mm ||
         m.status === 'silent_after_rise'),
   );
 }
@@ -69,8 +73,10 @@ function summarise(members, site, thresholds) {
 }
 
 /**
- * Finds moving zones with ST-DBSCAN on position and on how each node is moving beyond the
- * Knothe prediction (24 h change, speed, acceleration), then summarises each zone.
+ * Finds moving zones with ST-DBSCAN on position and on how each node departs from the Knothe
+ * prediction (unexplained sinking, its 24 h change, speed and acceleration), then summarises
+ * each zone. The unexplained sinking keeps ground that has settled after a collapse apart from
+ * the normal trough next to it.
  */
 export function buildZones({ metrics, site, prevZones = [], at }) {
   const t = site.thresholds;
@@ -78,6 +84,7 @@ export function buildZones({ metrics, site, prevZones = [], at }) {
   const points = zoneCandidates(metrics, t).map((m) => ({
     ...m,
     f: [
+      logFeature(m.excess_mm, sc.excess_mm),
       logFeature(m.excessChange24h_mm, sc.change_mm),
       logFeature(m.excessSpeed_mmPerDay, sc.speed_mmPerDay),
       logFeature(m.excessAccel_mmPerDay2, sc.accel_mmPerDay2),

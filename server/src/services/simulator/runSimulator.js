@@ -74,6 +74,10 @@ export async function startSimulator(siteId) {
     }
   };
 
+  await SystemStatus.updateOne(
+    { _id: siteId },
+    { $set: { simulated: true, simSpeed: env.SIM_SPEED } },
+  );
   const periodMs = 60_000 / env.SIM_SPEED;
   const timer = setInterval(tick, periodMs);
   logger.info(
