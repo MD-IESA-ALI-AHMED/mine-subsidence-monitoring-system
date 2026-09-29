@@ -107,6 +107,16 @@ export const useMeshHistory = (from, to, siteId = SITE_ID) =>
     staleTime: 5 * 60_000,
   });
 
+export const useSpeedHistory = (from, to, siteId = SITE_ID) =>
+  useQuery({
+    queryKey: ['speedHistory', siteId, from, to],
+    queryFn: () =>
+      get(`/sites/${siteId}/speed-history`, { from: iso(from), to: iso(to), step: 60 }),
+    enabled: from != null && to != null,
+    placeholderData: keepPreviousData,
+    staleTime: 5 * 60_000,
+  });
+
 export const useLatestPrediction = (siteId = SITE_ID) =>
   useQuery({
     queryKey: keys.prediction(siteId),

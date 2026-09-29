@@ -58,6 +58,16 @@ describe('read API over the seeded site', () => {
     expect(res.body.faces[0].panelId).toBe('P1');
   });
 
+  it('returns the site maximum speed per hour', async () => {
+    const res = await agent.get(
+      `/api/sites/site-01/speed-history?from=${at(6).toISOString()}&to=${at(7).toISOString()}`,
+    );
+    expect(res.status).toBe(200);
+    expect(res.body.t.length).toBeGreaterThanOrEqual(23);
+    expect(Math.max(...res.body.maxSpeed)).toBeGreaterThan(50); // the P1 trough
+    expect(res.body.nodeId).toHaveLength(res.body.t.length);
+  });
+
   it('replays the mesh as it was during the root failure (scenario I)', async () => {
     const during = await agent.get(`/api/links?siteId=site-01&at=${at(5, 11).toISOString()}`);
     expect(during.body.rootId).toBe('R-02');

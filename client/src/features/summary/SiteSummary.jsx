@@ -8,11 +8,12 @@ import { Value } from '../../ui/Value.jsx';
 import { limitText } from '../../utils/time.js';
 import s from '../overview/ContextPanel.module.css';
 import { highestRisk } from '../zones/zoneOrder.js';
+import { SiteSpeedChart } from './SiteSpeedChart.jsx';
 
 const maxBy = (arr, f) =>
   arr.reduce((best, x) => (f(x) != null && (best == null || f(x) > f(best)) ? x : best), null);
 
-/** Exactly four stats. The 7-day site speed chart below them arrives with the charts (phase 7). */
+/** Exactly four stats and one chart: the site's fastest sinking over 7 days. Nothing else. */
 export function SiteSummary() {
   const at = useTimeStore((st) => st.at);
   const nodes = useNodes(at);
@@ -75,6 +76,9 @@ export function SiteSummary() {
             </span>
           </span>
         </Stat>
+      </div>
+      <div style={{ marginTop: 'var(--sp-4)' }}>
+        <SiteSpeedChart />
       </div>
     </Panel>
   );

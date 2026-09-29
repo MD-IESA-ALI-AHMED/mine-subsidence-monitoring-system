@@ -1,0 +1,60 @@
+.uplot {
+  width: 100%;
+}
+
+.uplot :global(.u-legend) {
+  display: none;
+}
+
+.chartTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: var(--sp-2) 0 2px;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.chartTitle strong {
+  color: var(--text);
+  font-weight: var(--fw-medium);
+}
+
+.eventCaption {
+  min-height: 16px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.axisText {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  fill: var(--text-muted);
+}
+
+.markText {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--text);
+}
+
+.caption {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-2);
+}

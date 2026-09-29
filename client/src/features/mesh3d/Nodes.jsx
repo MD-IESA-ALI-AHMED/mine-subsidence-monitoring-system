@@ -4,6 +4,7 @@ import { useReducedMotion } from '../../hooks/useMediaQuery.js';
 import { useSelectionStore } from '../../store/selectionStore.js';
 import { useUiStore } from '../../store/uiStore.js';
 import { colourFor, nodeMetric } from './colourScales.js';
+import { FatLines } from './FatLines.jsx';
 import { NodeLabels } from './NodeLabels.jsx';
 import { NodePart } from './NodePart.jsx';
 import { PARTS, PICKABLE } from './nodeParts.js';
@@ -33,11 +34,35 @@ function SilentRing({ position, colour }) {
   );
 }
 
+/** Dashed ring around a node the mesh cannot reach while it is degraded. */
+function UnreachableRing({ position, colour }) {
+  const positions = useMemo(() => {
+    const out = [];
+    const r = 4;
+    for (let k = 0; k < 32; k += 1) {
+      const a0 = (k / 32) * Math.PI * 2;
+      const a1 = ((k + 1) / 32) * Math.PI * 2;
+      out.push(
+        position[0] + r * Math.cos(a0),
+        position[1] + 0.3,
+        position[2] + r * Math.sin(a0),
+        position[0] + r * Math.cos(a1),
+        position[1] + 0.3,
+        position[2] + r * Math.sin(a1),
+      );
+    }
+    return new Float32Array(out);
+  }, [position]);
+  return (
+    <FatLines positions={positions} color={colour} width={2} dashed dashSize={1.5} gapSize={1.2} />
+  );
+}
+
 /**
  * Every node as instanced parts, coloured by the chosen metric. Offline nodes are drawn hollow in
  * the offline tone. `appear(node, index)` (0..1) lets the opening animation raise nodes into place.
  */
-export function Nodes({ nodes, appear }) {
+export function Nodes({ nodes, appear, unreachable = [] }) {
   const { place, colours } = useSceneModel();
   const colourBy = useUiStore((s) => s.colourBy);
   const hovered = useSelectionStore((s) => s.hovered);
@@ -119,6 +144,11 @@ export function Nodes({ nodes, appear }) {
           colour={colours.tierCritical}
         />
       ))}
+      {items
+        .filter((it) => unreachable.includes(it.id))
+        .map((it) => (
+          <UnreachableRing key={`down-${it.id}`} position={it.base} colour={colours.tierWarning} />
+        ))}
       <NodeLabels items={items} />
     </group>
   );

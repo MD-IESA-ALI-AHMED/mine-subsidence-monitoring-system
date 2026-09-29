@@ -76,6 +76,13 @@ export async function latestAt(siteId, at, lookbackMin = 180) {
   return new Map(docs.map((d) => [d._id, d.doc]));
 }
 
+/** One node's newest reading at or before `at` (uses the meta.nodeId + ts index). */
+export function latestReading(nodeId, at) {
+  return Reading.findOne({ 'meta.nodeId': nodeId, ts: { $lte: at } })
+    .sort({ ts: -1 })
+    .lean();
+}
+
 /** All readings for the given nodes since `since`, grouped by node and sorted by time. */
 export async function recentByNode(siteId, nodeIds, since, until) {
   const ts = until ? { $gte: since, $lte: until } : { $gte: since };
@@ -85,6 +92,37 @@ export async function recentByNode(siteId, nodeIds, since, until) {
   const out = new Map(nodeIds.map((id) => [id, []]));
   for (const d of docs) out.get(d.meta.nodeId)?.push(d);
   return out;
+}
+
+/**
+ * Highest sinking speed across the site per time bucket (relays report no speed, so they drop out).
+ * Returns { t: [ms], maxSpeed: [mm/day], nodeId: [] }.
+ */
+export async function siteSpeedHistory(siteId, from, to, stepMin = 60) {
+  const docs = await Reading.aggregate([
+    {
+      $match: {
+        'meta.siteId': siteId,
+        ts: { $gte: from, $lte: to },
+        speed_mmPerDay: { $ne: null },
+      },
+    },
+    { $sort: { speed_mmPerDay: -1 } },
+    {
+      $group: {
+        _id: { $dateTrunc: { date: '$ts', unit: 'minute', binSize: stepMin } },
+        maxSpeed: { $first: '$speed_mmPerDay' },
+        nodeId: { $first: '$meta.nodeId' },
+      },
+    },
+    { $sort: { _id: 1 } },
+  ]);
+  return {
+    step: stepMin,
+    t: docs.map((d) => d._id.getTime()),
+    maxSpeed: docs.map((d) => +d.maxSpeed.toFixed(2)),
+    nodeId: docs.map((d) => d.nodeId),
+  };
 }
 
 export async function insertReadings(siteId, readings) {

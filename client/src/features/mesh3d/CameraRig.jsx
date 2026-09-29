@@ -89,7 +89,9 @@ export function CameraRig({ nodes, zones, enabled = true }) {
   useEffect(() => {
     const onKey = (e) => {
       if (
-        e.target.closest?.('input, textarea, select, [contenteditable]') ||
+        e.target.closest?.(
+          'input, textarea, select, [contenteditable], [role="slider"], [role="radiogroup"], table',
+        ) ||
         e.metaKey ||
         e.ctrlKey
       )

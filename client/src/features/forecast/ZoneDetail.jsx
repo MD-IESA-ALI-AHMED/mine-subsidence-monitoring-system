@@ -8,7 +8,9 @@ import { Table } from '../../ui/Table.jsx';
 import { Value } from '../../ui/Value.jsx';
 import { formatHours, formatRelative, formatTime } from '../../utils/time.js';
 import s from '../overview/ContextPanel.module.css';
+import { InverseVelocityChart } from './InverseVelocityChart.jsx';
 import { ScoreBar } from './ScoreBar.jsx';
+import { ZoneForecast } from './ZoneForecast.jsx';
 
 function TimeToLimit({ tCrit }) {
   const { data: prediction } = useLatestPrediction();
@@ -47,7 +49,7 @@ function TimeToLimit({ tCrit }) {
   );
 }
 
-/** Header facts, time to limit, score breakdown and nodes. Forecast charts arrive in phase 7. */
+/** Header facts, forecast, inverse velocity, both time-to-limit estimates, score breakdown, nodes. */
 export function ZoneDetail({ zoneKey, zone }) {
   const at = useTimeStore((st) => st.at);
   const { data: nodes } = useNodes(at);
@@ -68,6 +70,12 @@ export function ZoneDetail({ zoneKey, zone }) {
           {zone.nodeIds.length} nodes · {Math.round(zone.area_m2)} m² ·{' '}
           {zone.accelerating ? 'accelerating' : 'steady'}
         </p>
+      </Panel>
+      <Panel label="Forecast">
+        <ZoneForecast zone={zone} />
+      </Panel>
+      <Panel label="Inverse velocity">
+        <InverseVelocityChart iv={zone.inverseVelocity} />
       </Panel>
       <Panel label="Time to limit">
         <TimeToLimit tCrit={zone.tCrit} />

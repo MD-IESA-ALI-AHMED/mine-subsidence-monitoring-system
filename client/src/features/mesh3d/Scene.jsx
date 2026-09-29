@@ -125,7 +125,13 @@ export function Scene({ intro }) {
             <Contours reveal={st.contours ?? 1} />
             <Panels opacity={st.terrain ?? 1} />
             <SiteFeatures opacity={st.terrain ?? 1} />
-            {nodeList && <Nodes nodes={nodeList} appear={st.appear} />}
+            {nodeList && (
+              <Nodes
+                nodes={nodeList}
+                appear={st.appear}
+                unreachable={links.data?.degraded ? (links.data.down ?? []) : []}
+              />
+            )}
             {layers.links && links.data && nodeList && (
               <Links
                 linkState={links.data}

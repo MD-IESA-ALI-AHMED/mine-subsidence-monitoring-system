@@ -1,0 +1,66 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  height: 100%;
+  background: var(--surface-1);
+}
+
+.table {
+  min-height: 0;
+  overflow: auto;
+  border-right: 1px solid var(--line);
+}
+
+.side {
+  overflow-y: auto;
+}
+
+.tree {
+  margin: 0;
+}
+
+.treeSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.treeLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--text);
+}
+
+.treeCount {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  fill: var(--text-muted);
+}
+
+.treeCaption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.warn {
+  color: var(--tier-warning);
+}
+
+.crit {
+  color: var(--tier-critical);
+}
+
+@media (max-width: 1100px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+  .table {
+    border-right: 0;
+  }
+}

@@ -3,7 +3,7 @@ import { notFound } from '../../middleware/error.js';
 import { meshPath } from '../../services/topology/meshTree.js';
 import { getSiteNow } from '../../services/time/siteClock.js';
 import { meshStateAt } from '../links/service.js';
-import { latestAt } from '../readings/service.js';
+import { latestAt, latestReading } from '../readings/service.js';
 import { zonesAt } from '../zones/service.js';
 import { Node } from './model.js';
 
@@ -81,11 +81,12 @@ export async function getNode(id) {
   const n = await Node.findById(id).lean();
   if (!n) throw notFound(`Node ${id} not found`);
   const now = await getSiteNow(n.siteId);
-  const [zones, mesh, readings] = await Promise.all([
+  const [zones, mesh, last] = await Promise.all([
     zonesAt(n.siteId),
     meshStateAt(n.siteId),
-    latestAt(n.siteId, now, 7 * 24 * 60),
+    latestReading(n._id, now),
   ]);
+  const readings = new Map(last ? [[n._id, last]] : []);
   const parentOf = (rid) => mesh.links.find((l) => l.kind === 'mesh' && l.from === rid)?.to ?? null;
   const down = new Set(mesh.down ?? []);
   const primary = isRelayType(n.type)

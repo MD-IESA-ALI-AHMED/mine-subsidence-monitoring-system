@@ -40,6 +40,12 @@
   color: var(--tier-watch);
 }
 
+.degradedLine {
+  display: block;
+  margin-top: 2px;
+  color: var(--tier-warning);
+}
+
 .body {
   flex: 1;
   min-height: 0;

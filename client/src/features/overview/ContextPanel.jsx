@@ -1,11 +1,11 @@
 import { X } from 'lucide-react';
-import { useNodes, useZones } from '../../services/queries.js';
+import { useLinks, useNodes, useZones } from '../../services/queries.js';
 import { useSelectionStore } from '../../store/selectionStore.js';
 import { useTimeStore } from '../../store/timeStore.js';
 import { useUiStore } from '../../store/uiStore.js';
 import { Button, IconButton } from '../../ui/Button.jsx';
 import { TierBadge } from '../../ui/TierBadge.jsx';
-import { formatDateTime } from '../../utils/time.js';
+import { formatDateTime, formatTime } from '../../utils/time.js';
 import { ZoneDetail } from '../forecast/ZoneDetail.jsx';
 import { NodeDetail } from '../nodes/NodeDetail.jsx';
 import { SectionProfile } from '../mesh3d/SectionProfile.jsx';
@@ -23,10 +23,18 @@ function NotLiveBanner() {
   const at = useTimeStore((st) => st.at);
   const goLive = useTimeStore((st) => st.goLive);
   const hour12 = useUiStore((st) => st.settings.hour12);
+  const { data: mesh } = useLinks(at);
   if (at == null) return null;
   return (
     <div className={s.notLive} role="status">
-      <span>Viewing {formatDateTime(at, { hour12 })} — not live</span>
+      <span>
+        Viewing {formatDateTime(at, { hour12 })} — not live
+        {mesh?.degraded && (
+          <span className={s.degradedLine}>
+            Degraded — root lost {formatTime(mesh.since, { hour12 })}, {mesh.rootId} now root
+          </span>
+        )}
+      </span>
       <Button size="small" onClick={goLive}>
         Back to live
       </Button>

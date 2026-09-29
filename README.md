@@ -6,10 +6,10 @@ form a Wi-Fi mesh. The backend works out sinking at every unit, checks whether s
 units are moving together, finds moving zones, asks a prediction model for forecasts and scores
 each zone's danger. MERN stack, Three.js front end.
 
-> **Build status.** Phases 1–6 are done: backend, dummy data, pipeline, mock model, simulator,
-> the dashboard shell (login, top bar, zones, alerts, context panel) and the 3D scene. Still to
-> come: charts and the time scrubber, the Alerts / Network / Settings pages (phase 7), the
-> opening animation (phase 8) and the final polish and end-to-end tests (phase 9).
+> **Build status.** Phases 1–7 are done: backend, dummy data, pipeline, mock model, simulator,
+> the dashboard (login, top bar, zones, alerts, context panel with charts), the 3D scene, the
+> time scrubber and the Alerts, Network and Settings pages. Still to come: the opening animation
+> (phase 8) and the final polish, end-to-end tests and screenshot review (phase 9).
 
 ## Requirements
 

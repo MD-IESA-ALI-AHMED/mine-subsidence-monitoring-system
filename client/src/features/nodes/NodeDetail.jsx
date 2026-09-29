@@ -10,6 +10,7 @@ import { Value } from '../../ui/Value.jsx';
 import { tiltValue, volts } from '../../utils/format.js';
 import { formatFull, formatRelative } from '../../utils/time.js';
 import s from '../overview/ContextPanel.module.css';
+import { NodeCharts } from './NodeCharts.jsx';
 
 const STATUS_TEXT = {
   online: 'online',
@@ -30,7 +31,7 @@ function Tilt({ urad, mode }) {
   );
 }
 
-/** Header, key values and actions. The three synced charts arrive with the charts (phase 7). */
+/** Header, key values, path to root, three synced history charts, and actions. */
 export function NodeDetail({ nodeId, listed }) {
   const q = useNode(nodeId);
   const now = useSiteNow();
@@ -143,6 +144,11 @@ export function NodeDetail({ nodeId, listed }) {
           ))}
         </p>
       </Panel>
+      {!relay && (
+        <Panel label="History">
+          <NodeCharts nodeId={n.id} />
+        </Panel>
+      )}
       <Panel>
         <div className={s.actions}>
           <Button size="small" onClick={() => navigate(`/network?node=${n.id}`)}>

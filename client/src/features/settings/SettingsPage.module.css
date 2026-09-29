@@ -1,0 +1,64 @@
+.page {
+  height: 100%;
+  overflow-y: auto;
+  max-width: 960px;
+  background: var(--surface-1);
+  border-right: 1px solid var(--line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 40px;
+}
+
+.label {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+
+.note {
+  margin-bottom: var(--sp-3);
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+
+.note code {
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--sp-6);
+}
+
+.kv {
+  margin: 0;
+}
+
+.kvRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-base);
+}
+
+.kvRow dt {
+  color: var(--text-muted);
+}
+
+.kvRow dd {
+  margin: 0;
+  text-align: right;
+}
+
+.unit {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
