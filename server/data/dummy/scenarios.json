@@ -97,15 +97,16 @@
       "minCorroborating": 3,
       "holdMinutes": 360,
       "limitSinking_mm": 100,
-      "limitSpeed_mmPerDay": 50,
+      "limitSpeed_mmPerDay": 70,
       "limitTilt_mmPerM": 3,
-      "zoneFeatureEps": 1,
+      "zoneFeatureEps": 0.8,
       "zoneFeatureScale": {
         "change_mm": 10,
         "speed_mmPerDay": 5,
         "accel_mmPerDay2": 10
       },
       "acceleratingMin_mmPerDay2": 4,
+      "acceleratingRelative_perDay": 0.5,
       "fastModeRadius_m": 30,
       "offlineMissedIntervals": 3,
       "severity": {

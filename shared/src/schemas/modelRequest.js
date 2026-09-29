@@ -24,6 +24,9 @@ export const modelNodeSchema = z.object({
     tiltY_urad: series,
     rod_mm: series,
     temp_C: series,
+    // Knothe-expected sinking in each slot, so a model can forecast only the unexplained part.
+    // Optional: a model may ignore it.
+    expected_mm: series.optional(),
     event: z.array(z.union([z.literal(0), z.literal(1)])),
     mask: z.array(z.union([z.literal(0), z.literal(1)])),
   }),

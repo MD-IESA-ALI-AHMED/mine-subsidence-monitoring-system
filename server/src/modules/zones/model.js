@@ -16,7 +16,11 @@ const zoneSchema = new mongoose.Schema(
     worstNodeId: String,
     meanSpeed_mmPerDay: Number,
     meanExcessSpeed_mmPerDay: Number,
+    maxSpeed_mmPerDay: Number,
+    maxExcessSpeed_mmPerDay: Number,
     accelerating: Boolean,
+    nearVillage: Boolean,
+    hasSilentAfterRise: Boolean,
     knotheExpected_mm: Number,
     deviation_mm: Number,
     severity: {
