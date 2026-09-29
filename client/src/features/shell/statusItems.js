@@ -8,7 +8,7 @@ const REPORT_INTERVAL_MIN = 10;
  * The status strip as a list of { key, text, level, title } with level ok | warning | critical.
  * Pure, so it can be tested without rendering.
  */
-export function statusItems({ status, siteNow, conn, lastMessageWall, wallNow }) {
+export function statusItems({ status, siteNow, conn, lastMessageWall, lastReadingSite, wallNow }) {
   if (!status) return [{ key: 'loading', text: 'Connecting…', level: 'ok' }];
   const items = [];
 
@@ -49,7 +49,10 @@ export function statusItems({ status, siteNow, conn, lastMessageWall, wallNow })
     });
   }
 
-  const lastReading = status.lastReadingAt ? new Date(status.lastReadingAt) : null;
+  // The status document updates every pipeline run; readings pushed since then count too.
+  const statusMs = status.lastReadingAt ? new Date(status.lastReadingAt).getTime() : 0;
+  const newestMs = Math.max(statusMs, lastReadingSite ?? 0);
+  const lastReading = newestMs ? new Date(newestMs) : null;
   const ageSiteMin = lastReading ? (siteNow - lastReading) / MIN : Infinity;
   if (ageSiteMin > STALE_INTERVALS * REPORT_INTERVAL_MIN) {
     const text = lastReading ? `No new data for ${Math.round(ageSiteMin)} min` : 'No data yet';

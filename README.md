@@ -6,10 +6,10 @@ form a Wi-Fi mesh. The backend works out sinking at every unit, checks whether s
 units are moving together, finds moving zones, asks a prediction model for forecasts and scores
 each zone's danger. MERN stack, Three.js front end.
 
-> **Build status.** Phases 1–4 are done: the backend, the dummy data, the pipeline, the mock
-> model and the live simulator. The client is still the phase 1 shell (tokens, fonts, theme
-> toggle); the dashboard screens come in phases 5–9. Today you can run the whole backend and
-> watch it work through the API and the database.
+> **Build status.** Phases 1–6 are done: backend, dummy data, pipeline, mock model, simulator,
+> the dashboard shell (login, top bar, zones, alerts, context panel) and the 3D scene. Still to
+> come: charts and the time scrubber, the Alerts / Network / Settings pages (phase 7), the
+> opening animation (phase 8) and the final polish and end-to-end tests (phase 9).
 
 ## Requirements
 
@@ -150,3 +150,5 @@ per slot) so a model can forecast only the unexplained part.
 - **Acceleration window.** Acceleration comes from a 6-hour fit; a 6-reading window is too noisy.
 - **New collection.** `meshHistory` stores the mesh layout over time for `GET /links?at=`.
 - **Tests.** Vitest instead of Jest, because Jest's ES-module support is still experimental.
+- **3D exaggeration.** Defaults to ×50, not ×300. At ×300 the ~0.7 m longwall trough becomes a
+  220 m crater in a 320 m site. The slider still runs ×1–×1000 and the value is always on screen.

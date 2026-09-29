@@ -75,6 +75,7 @@ export const useTerrain = (at, res = 4, siteId = SITE_ID) =>
     queryFn: () => get(`/sites/${siteId}/terrain`, { res, at: iso(at) }),
     placeholderData: keepPreviousData,
     staleTime: at ? Infinity : 20_000,
+    refetchInterval: at ? false : 20_000,
   });
 
 export const useAlerts = (filters = {}, siteId = SITE_ID) =>

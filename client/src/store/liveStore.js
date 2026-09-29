@@ -11,6 +11,7 @@ const MAX_REPORTS = 80;
 export const useLiveStore = create((set, get) => ({
   conn: 'connecting', // connecting | connected | reconnecting | offline
   lastMessageWall: null, // wall-clock ms of the last readings batch
+  lastReadingSite: null, // site ms of the newest reading received
   clockBase: null, // site ms
   clockBaseWall: null, // wall ms when clockBase was observed
   simSpeed: 1,
@@ -21,6 +22,7 @@ export const useLiveStore = create((set, get) => ({
 
   observeSiteTime: (siteMs, simSpeed) => {
     const s = get();
+    if (siteMs > (s.lastReadingSite ?? 0)) set({ lastReadingSite: siteMs });
     if (simSpeed) set({ simSpeed });
     if (s.clockBase == null || siteMs > s.currentSiteMs()) {
       set({ clockBase: siteMs, clockBaseWall: Date.now() });

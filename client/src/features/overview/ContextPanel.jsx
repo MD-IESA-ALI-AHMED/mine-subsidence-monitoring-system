@@ -8,6 +8,7 @@ import { TierBadge } from '../../ui/TierBadge.jsx';
 import { formatDateTime } from '../../utils/time.js';
 import { ZoneDetail } from '../forecast/ZoneDetail.jsx';
 import { NodeDetail } from '../nodes/NodeDetail.jsx';
+import { SectionProfile } from '../mesh3d/SectionProfile.jsx';
 import { SiteSummary } from '../summary/SiteSummary.jsx';
 import s from './ContextPanel.module.css';
 
@@ -38,6 +39,7 @@ export function ContextPanel({ embedded = false }) {
   const selected = useSelectionStore((st) => st.selected);
   const clear = useSelectionStore((st) => st.clear);
   const at = useTimeStore((st) => st.at);
+  const view = useUiStore((st) => st.view);
   const { data: zones } = useZones(at);
   const { data: nodes } = useNodes(at);
 
@@ -59,6 +61,7 @@ export function ContextPanel({ embedded = false }) {
       )}
       <NotLiveBanner />
       <div className={s.body}>
+        {view === 'section' && <SectionProfile />}
         {kind === 'zone' && <ZoneDetail zoneKey={selected.id} zone={zone} />}
         {kind === 'node' && <NodeDetail nodeId={selected.id} listed={node} />}
         {!kind && <SiteSummary />}

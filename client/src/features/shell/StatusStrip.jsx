@@ -10,13 +10,14 @@ export function StatusStrip() {
   const siteNow = useSiteNow();
   const conn = useLiveStore((st) => st.conn);
   const lastMessageWall = useLiveStore((st) => st.lastMessageWall);
+  const lastReadingSite = useLiveStore((st) => st.lastReadingSite);
   const [wallNow, setWallNow] = useState(Date.now());
   useEffect(() => {
     const t = setInterval(() => setWallNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
 
-  const items = statusItems({ status, siteNow, conn, lastMessageWall, wallNow });
+  const items = statusItems({ status, siteNow, conn, lastMessageWall, lastReadingSite, wallNow });
   return (
     <ul className={s.strip} aria-label="System status">
       {items.map((it) => (

@@ -37,7 +37,9 @@ export const useUiStore = create(
       panelCollapsed: false,
       colourBy: 'sinking',
       view: 'oblique',
-      exaggeration: 300,
+      // ×50 keeps the ~0.7 m longwall trough readable (≈37 m deep) while the tens-of-mm zone over
+      // old workings still shows; the brief's ×300 turned the trough into a crater.
+      exaggeration: 50,
       layers: {
         links: true,
         backup: false,
@@ -56,7 +58,12 @@ export const useUiStore = create(
       toggleLayer: (name) => set((s) => ({ layers: { ...s.layers, [name]: !s.layers[name] } })),
       setSetting: (key, value) => set((s) => ({ settings: { ...s.settings, [key]: value } })),
     }),
-    { name: 'ui', storage: safeStorage, version: 1 },
+    {
+      name: 'ui',
+      storage: safeStorage,
+      version: 2,
+      migrate: (state, version) => (version < 2 ? { ...state, exaggeration: 50 } : state),
+    },
   ),
 );
 
