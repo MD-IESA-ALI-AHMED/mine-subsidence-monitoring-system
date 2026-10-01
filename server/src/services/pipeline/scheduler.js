@@ -41,5 +41,9 @@ export function startPipelineScheduler() {
   };
 
   bus.on('readings:accepted', onReadings);
-  return { stop: () => bus.off('readings:accepted', onReadings) };
+  return {
+    stop: () => bus.off('readings:accepted', onReadings),
+    // After the site data is reloaded, site time starts again from an earlier point.
+    reset: () => state.clear(),
+  };
 }

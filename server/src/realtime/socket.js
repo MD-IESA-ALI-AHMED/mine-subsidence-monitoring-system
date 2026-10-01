@@ -3,17 +3,22 @@ import { Server } from 'socket.io';
 import { SOCKET_EVENTS, siteRoom } from '@subsidence/shared';
 import { env } from '../config/env.js';
 import { logger } from '../config/logger.js';
-import { ACCESS_COOKIE, verifyAccess } from '../modules/auth/tokens.js';
+import { ACCESS_COOKIE, verifyAccess, verifySocket } from '../modules/auth/tokens.js';
 import { bus } from './bus.js';
 import { createThrottler } from './throttle.js';
 
 const EXPIRY_MARGIN_MS = 5000;
 
-/** Authenticates the handshake from the access cookie; the client reconnects after a refresh. */
+/**
+ * Authenticates the handshake: a socket token from /api/auth/socket-token (page and socket on
+ * different origins), or else the access cookie (same origin). The client reconnects after a
+ * refresh.
+ */
 function authenticate(socket, next) {
   try {
+    const token = socket.handshake.auth?.token;
     const cookies = parseCookie(socket.handshake.headers.cookie ?? '');
-    const claims = verifyAccess(cookies[ACCESS_COOKIE] ?? '');
+    const claims = token ? verifySocket(token) : verifyAccess(cookies[ACCESS_COOKIE] ?? '');
     socket.data.user = { id: claims.sub, name: claims.name };
     socket.data.exp = claims.exp * 1000;
     next();

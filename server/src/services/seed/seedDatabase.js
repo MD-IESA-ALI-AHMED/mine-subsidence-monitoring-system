@@ -17,11 +17,39 @@ import { addMinutes, istMidnightAtOrBefore } from '../time/siteTime.js';
 const BATCH = 5000;
 export const BCRYPT_COST = 12;
 
+const ACCOUNT_MODELS = new Set(['User', 'Session', 'AuditLog']);
+
 /**
- * Clears the database and loads the dummy site. The history is shifted by whole days so that
- * it ends at the most recent IST midnight (blasts stay at 13:30 IST, trucks run 06:00-22:00).
+ * Drops and recreates the app's collections one by one. (Atlas database users usually have the
+ * readWrite role, which may drop collections but not the whole database.)
  */
-export async function seedDatabase({ demoPassword, now = new Date(), log = () => {} }) {
+async function resetCollections({ keepAccounts }) {
+  const models = mongoose.modelNames().map((n) => mongoose.model(n));
+  // Let Mongoose finish its automatic collection/index setup before dropping underneath it.
+  await Promise.all(models.map((m) => m.init().catch(() => {})));
+  for (const m of models) {
+    if (keepAccounts && ACCOUNT_MODELS.has(m.modelName)) continue;
+    await m.collection.drop().catch((err) => {
+      if (err.codeName !== 'NamespaceNotFound' && err.code !== 26) throw err;
+    });
+    await m.createCollection();
+    await m.syncIndexes();
+  }
+}
+
+/**
+ * Loads the dummy site. The history is shifted by whole days so that it ends at the most recent
+ * IST midnight (blasts stay at 13:30 IST, trucks run 06:00-22:00).
+ * keepAccounts: reload only the site data (used when the live story replays), keeping users,
+ * sessions and the audit log so nobody is signed out.
+ */
+export async function seedDatabase({
+  demoPassword,
+  demoEmail = 'demo@site01.local',
+  keepAccounts = false,
+  now = new Date(),
+  log = () => {},
+}) {
   const cfg = readJson('scenarios.json');
   const siteDoc = readJson('site.json');
   const historyMin = cfg.history.days * 1440;
@@ -29,14 +57,7 @@ export async function seedDatabase({ demoPassword, now = new Date(), log = () =>
   const start = addMinutes(end, -historyMin);
   const at = (tMin) => addMinutes(start, tMin);
 
-  // Let Mongoose finish its automatic collection/index setup before dropping underneath it.
-  const models = mongoose.modelNames().map((n) => mongoose.model(n));
-  await Promise.all(models.map((m) => m.init().catch(() => {})));
-  await mongoose.connection.dropDatabase();
-  for (const m of models) {
-    await m.createCollection();
-    await m.syncIndexes();
-  }
+  await resetCollections({ keepAccounts });
 
   siteDoc.historyStartAt = start;
   siteDoc.simulated = true;
@@ -119,11 +140,12 @@ export async function seedDatabase({ demoPassword, now = new Date(), log = () =>
     );
   }
 
-  const users = readJson('users.json');
-  for (const u of users) {
+  if (!keepAccounts) {
+    const [demo] = readJson('users.json');
     await User.create({
-      name: u.name,
-      email: u.email,
+      name: demo.name,
+      email: demoEmail.toLowerCase(),
+      isDemo: true,
       passwordHash: await bcrypt.hash(demoPassword, BCRYPT_COST),
     });
   }
@@ -146,7 +168,7 @@ export async function seedDatabase({ demoPassword, now = new Date(), log = () =>
   log(
     `Seeded ${siteId}: ${nodes.length} nodes, history ${start.toISOString()} -> ${end.toISOString()}`,
   );
-  return { siteId, start, end, readings: count, users: users.map((u) => u.email) };
+  return { siteId, start, end, readings: count, users: [demoEmail.toLowerCase()] };
 }
 
 /** True when the database has no site yet (fresh clone). */

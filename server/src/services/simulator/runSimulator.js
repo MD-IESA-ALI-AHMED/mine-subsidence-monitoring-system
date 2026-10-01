@@ -19,7 +19,7 @@ import { eventsBetween } from './scenarioEvents.js';
  * simulated minute; at SIM_SPEED=60 that is one real second. Nodes report every 10 minutes,
  * or every minute in fast mode.
  */
-export async function startSimulator(siteId) {
+export async function startSimulator(siteId, { onLoopEnd } = {}) {
   const cfg = readJson('scenarios.json');
   const [site, nodes, status] = await Promise.all([
     Site.findById(siteId).lean(),
@@ -37,9 +37,22 @@ export async function startSimulator(siteId) {
   };
   bus.on('fastmode:changed', onFast);
 
+  // The scripted story is over after SIM_LOOP_DAYS of live data; the caller then replays it.
+  const loopEnd =
+    env.SIM_LOOP_DAYS > 0 ? cfg.history.days * 1440 + env.SIM_LOOP_DAYS * 1440 : Infinity;
+  let ended = false;
+  let timer = null;
+
   let busy = false;
   const tick = async () => {
-    if (busy) return; // a slow tick never overlaps the next one
+    if (busy || ended) return; // a slow tick never overlaps the next one
+    if (t >= loopEnd) {
+      ended = true;
+      clearInterval(timer);
+      bus.off('fastmode:changed', onFast);
+      onLoopEnd?.();
+      return;
+    }
     busy = true;
     try {
       t += 1;
@@ -79,13 +92,14 @@ export async function startSimulator(siteId) {
     { $set: { simulated: true, simSpeed: env.SIM_SPEED } },
   );
   const periodMs = 60_000 / env.SIM_SPEED;
-  const timer = setInterval(tick, periodMs);
+  timer = setInterval(tick, periodMs);
   logger.info(
     { siteId, speed: env.SIM_SPEED, from: addMinutes(start, t).toISOString() },
     'Simulator running',
   );
   return {
     stop() {
+      ended = true;
       clearInterval(timer);
       bus.off('fastmode:changed', onFast);
     },

@@ -23,6 +23,24 @@ export function signRefresh({ jti, userId, family }) {
   });
 }
 
+/**
+ * Short-lived token for opening the live socket when the socket server is on another origin
+ * than the page (e.g. page on Vercel, API on Render): the browser will not send the Strict
+ * access cookie there. Kept in memory by the client, never stored.
+ */
+export function signSocket(user) {
+  return jwt.sign({ name: user.name, use: 'socket' }, env.JWT_ACCESS_SECRET, {
+    subject: String(user.id),
+    expiresIn: accessTtlSec(),
+  });
+}
+
+export function verifySocket(token) {
+  const claims = jwt.verify(token, env.JWT_ACCESS_SECRET);
+  if (claims.use !== 'socket') throw new Error('Not a socket token');
+  return claims;
+}
+
 export const verifyAccess = (token) => jwt.verify(token, env.JWT_ACCESS_SECRET);
 export const verifyRefresh = (token) => jwt.verify(token, env.JWT_REFRESH_SECRET);
 

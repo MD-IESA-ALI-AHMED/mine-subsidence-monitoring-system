@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
 import { E2E_PASSWORD } from '../playwright.config.js';
 
-export const DEMO_EMAIL = 'demo@site01.local';
+export const DEMO_EMAIL = 'minesubsidence@sih';
 
 /** Marks the opening animation as already played for this browser session. */
 export async function skipIntro(page) {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Same-origin requests (Vite proxies /api), so the httpOnly SameSite=Strict cookies travel.
-export const api = axios.create({ baseURL: '/api', withCredentials: true, timeout: 20000 });
+export const api = axios.create({ baseURL: '${import.meta.env.VITE_API_PROXY_TARGET}/api', withCredentials: true, timeout: 20000 });
 
 let refreshing = null;
 let onAuthLost = () => {};
