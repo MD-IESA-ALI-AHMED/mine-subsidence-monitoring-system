@@ -10,6 +10,7 @@ import { ContextPanel } from './ContextPanel.jsx';
 
 // No network in unit tests: anything not already in the cache stays loading.
 vi.mock('../../services/api.js', () => ({
+  API_ORIGIN: '',
   api: { get: () => new Promise(() => {}), post: () => new Promise(() => {}) },
   errorMessage: (e) => String(e),
 }));

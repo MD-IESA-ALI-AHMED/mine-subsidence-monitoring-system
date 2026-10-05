@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Download } from 'lucide-react';
+import { API_ORIGIN } from '../../services/api.js';
 import { useEvents, useNodePredictions, useNodeReadings } from '../../services/queries.js';
 import { useSiteNow } from '../../store/liveStore.js';
 import { useTimeStore } from '../../store/timeStore.js';
@@ -91,7 +92,7 @@ export function NodeCharts({ nodeId }) {
     };
   }, [tokens, syncKey, data.events, tiltLabel]);
 
-  const exportHref = `/api/export/readings.csv?nodeIds=${nodeId}&from=${new Date(from).toISOString()}&to=${new Date(to).toISOString()}`;
+  const exportHref = `${API_ORIGIN}/api/export/readings.csv?nodeIds=${nodeId}&from=${new Date(from).toISOString()}&to=${new Date(to).toISOString()}`;
 
   if (readings.isError)
     return <InlineError message="Could not load readings." onRetry={readings.refetch} />;

@@ -1,11 +1,12 @@
 import { io } from 'socket.io-client';
 import { SOCKET_EVENTS } from '@subsidence/shared';
+import { API_ORIGIN } from './api.js';
 
 /**
  * Opens the public Socket.IO connection. `onState` gets 'connected' | 'reconnecting' | 'offline'.
  */
 export function connectSocket({ siteId, handlers, onState }) {
-  const socket = io({
+  const socket = io(API_ORIGIN || undefined, {
     path: '/socket.io',
     transports: ['websocket'],
     autoConnect: false,

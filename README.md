@@ -48,6 +48,15 @@ for `Simulator running` in the log. After that, one real second is one simulated
 
 Open http://localhost:5173 to go directly to the public dashboard. No sign-in is required.
 
+### Vercel deployment
+
+When deploying the client to Vercel, set `VITE_API_BASE_URL` to the backend's public origin,
+for example `https://your-api-host.example.com` (no `/api` suffix). This value is embedded at
+build time and is used for dashboard API requests, CSV exports, and the live Socket.IO connection.
+Also configure the backend's `CORS_ORIGINS` with the exact Vercel site origin, such as
+`https://your-project.vercel.app` (comma-separated if you use multiple domains), then redeploy both
+services. Keep `VITE_API_PROXY_TARGET` for local Vite development only.
+
 ## Using the dashboard
 
 - **Overview** is the working screen. The 3D site is in the centre, with moving zones and the
