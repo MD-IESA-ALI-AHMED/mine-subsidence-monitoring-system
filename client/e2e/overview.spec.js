@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
-import { details, rail, signIn } from './helpers.js';
+import { details, openDashboard, rail } from './helpers.js';
 
 test('the Overview loads all 60 nodes into the 3D scene', async ({ page }) => {
   const nodes = page.waitForResponse((r) => /\/api\/nodes\?/.test(r.url()) && r.ok());
-  await signIn(page);
+  await openDashboard(page);
   const body = await (await nodes).json();
   expect(body.nodes).toHaveLength(60);
   await expect(page.locator('canvas')).toBeVisible();
@@ -11,7 +11,7 @@ test('the Overview loads all 60 nodes into the 3D scene', async ({ page }) => {
 });
 
 test('selecting zone Z-OW1 in the rail opens its forecast', async ({ page }) => {
-  await signIn(page);
+  await openDashboard(page);
   await rail(page).getByRole('button', { name: /Z-OW1/ }).first().click();
   const panel = details(page);
   await expect(panel.getByRole('heading', { name: 'Z-OW1' })).toBeVisible();
@@ -25,7 +25,7 @@ test('selecting zone Z-OW1 in the rail opens its forecast', async ({ page }) => 
 });
 
 test('scrubbing back to day 5 10:30 shows the degraded mesh', async ({ page }) => {
-  await signIn(page);
+  await openDashboard(page);
   const slider = page.getByRole('slider', { name: 'Time shown' });
   const min = Number(await slider.getAttribute('aria-valuemin'));
   const max = Number(await slider.getAttribute('aria-valuemax'));
@@ -40,7 +40,7 @@ test('scrubbing back to day 5 10:30 shows the degraded mesh', async ({ page }) =
 });
 
 test('the theme toggle switches between dark and light', async ({ page }) => {
-  await signIn(page);
+  await openDashboard(page);
   const html = page.locator('html');
   const before = await html.getAttribute('data-theme');
   await page.getByRole('button', { name: /Switch to (light|dark) theme/ }).click();
@@ -52,7 +52,7 @@ test('the theme toggle switches between dark and light', async ({ page }) => {
 });
 
 test('exporting a node downloads a CSV with a descriptive filename', async ({ page }) => {
-  await signIn(page);
+  await openDashboard(page);
   await rail(page).getByRole('button', { name: /Z-OW1/ }).first().click();
   await details(page).getByRole('table', { name: /Nodes in Z-OW1/ }).locator('tbody tr').first().click();
   const download = page.waitForEvent('download');

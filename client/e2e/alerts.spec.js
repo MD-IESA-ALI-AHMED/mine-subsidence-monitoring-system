@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test';
-import { signIn } from './helpers.js';
+import { openDashboard } from './helpers.js';
 
 test('acknowledging an alert records who did it and updates the lists', async ({ page }) => {
-  await signIn(page);
+  await openDashboard(page);
   await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: /Alerts/ }).click();
   const table = page.getByRole('table', { name: 'Alerts' });
   const openRow = table.locator('tbody tr', { hasText: 'Open' }).first();
@@ -28,7 +28,7 @@ test('acknowledging an alert records who did it and updates the lists', async ({
 });
 
 test('the Network page lists every node and opens one on the Overview', async ({ page }) => {
-  await signIn(page);
+  await openDashboard(page);
   await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Network' }).click();
   const rows = page.getByRole('table', { name: 'Nodes' }).locator('tbody tr');
   await expect(rows).toHaveCount(60);
@@ -41,7 +41,7 @@ test('the Network page lists every node and opens one on the Overview', async ({
 });
 
 test('Settings shows display options and read-only thresholds', async ({ page }) => {
-  await signIn(page);
+  await openDashboard(page);
   await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Settings' }).click();
   await expect(page.getByRole('radiogroup', { name: 'Tilt unit' })).toBeVisible();
   await expect(page.getByText('Limit: sinking beyond expected')).toBeVisible();

@@ -1,9 +1,6 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter, Outlet } from 'react-router-dom';
-import { LoginPage } from '../features/auth/LoginPage.jsx';
+import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 import { AppShell } from '../features/shell/AppShell.jsx';
-import { AuthLostBridge } from './providers.jsx';
-import { ProtectedRoute } from './ProtectedRoute.jsx';
 
 const OverviewPage = lazy(() => import('../features/overview/OverviewPage.jsx'));
 const AlertsPage = lazy(() => import('../features/alerts/AlertsPage.jsx'));
@@ -17,31 +14,21 @@ const page = (Component) => (
 );
 
 function Root() {
-  return (
-    <>
-      <AuthLostBridge />
-      <Outlet />
-    </>
-  );
+  return <Outlet />;
 }
 
 export const router = createBrowserRouter([
   {
     element: <Root />,
     children: [
-      { path: '/login', element: <LoginPage /> },
       {
-        element: (
-          <ProtectedRoute>
-            <AppShell />
-          </ProtectedRoute>
-        ),
+        element: <AppShell />,
         children: [
           { path: '/', element: page(OverviewPage) },
           { path: '/alerts', element: page(AlertsPage) },
           { path: '/network', element: page(NetworkPage) },
           { path: '/settings', element: page(SettingsPage) },
-          { path: '*', element: page(OverviewPage) },
+          { path: '*', element: <Navigate to="/" replace /> },
         ],
       },
     ],

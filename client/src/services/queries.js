@@ -7,7 +7,6 @@ const iso = (ms) => (ms == null ? undefined : new Date(ms).toISOString());
 const get = (url, params) => api.get(url, { params }).then((r) => r.data);
 
 export const keys = {
-  me: ['me'],
   status: (s) => ['status', s],
   site: (s) => ['site', s],
   nodes: (s, at) => ['nodes', s, at ?? 'live'],
@@ -23,14 +22,6 @@ export const keys = {
   nodePredictions: (id) => ['nodePredictions', id],
   zoneHistory: (s, key) => ['zoneHistory', s, key],
 };
-
-export const useMe = () =>
-  useQuery({
-    queryKey: keys.me,
-    queryFn: () => get('/auth/me').then((d) => d.user),
-    retry: false,
-    staleTime: Infinity,
-  });
 
 export const useStatus = (siteId = SITE_ID) =>
   useQuery({
@@ -152,22 +143,6 @@ export const useZoneHistory = (zoneKey, siteId = SITE_ID) =>
     queryFn: () => get(`/zones/${zoneKey}/history`, { siteId }).then((d) => d.history),
     enabled: Boolean(zoneKey),
   });
-
-export function useLogin() {
-  const qc = useQueryClient();
-  return useMutation({
-    mutationFn: (body) => api.post('/auth/login', body).then((r) => r.data.user),
-    onSuccess: (user) => qc.setQueryData(keys.me, user),
-  });
-}
-
-export function useLogout() {
-  const qc = useQueryClient();
-  return useMutation({
-    mutationFn: () => api.post('/auth/logout'),
-    onSettled: () => qc.clear(),
-  });
-}
 
 function useAlertAction(action) {
   const qc = useQueryClient();

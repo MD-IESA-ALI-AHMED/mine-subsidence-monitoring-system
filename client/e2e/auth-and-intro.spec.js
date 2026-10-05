@@ -1,18 +1,11 @@
 import { expect, test } from '@playwright/test';
-import { DEMO_EMAIL, signIn } from './helpers.js';
+import { openDashboard } from './helpers.js';
 
-test('sign-in rejects a wrong password with a generic message', async ({ page }) => {
-  await page.goto('/login');
-  await page.getByLabel('Email').fill(DEMO_EMAIL);
-  await page.getByLabel('Password').fill('not-the-password');
-  await page.getByRole('button', { name: 'Sign in' }).click();
-  await expect(page.getByRole('alert')).toHaveText('Email or password is incorrect');
-});
-
-test('signs in and lands on the Overview', async ({ page }) => {
-  await signIn(page);
+test('the root URL opens the public Overview without sign-in', async ({ page }) => {
+  await openDashboard(page);
   await expect(page.getByRole('navigation', { name: 'Main' })).toBeVisible();
   await expect(page.getByText('Simulated data')).toBeVisible();
+  await expect(page.getByRole('button', { name: /^Account/ })).toHaveCount(0);
 });
 
 test('the opening animation plays once and can be skipped', async ({ page }) => {
@@ -22,7 +15,7 @@ test('the opening animation plays once and can be skipped', async ({ page }) => 
     const t0 = real();
     performance.now = () => t0 + (real() - t0) / 10;
   });
-  await signIn(page, { intro: true });
+  await openDashboard(page, { intro: true });
   const scene = page.locator('[data-intro-t]');
   // Running: the element carries the animation time in seconds.
   await expect(scene).toHaveAttribute('data-intro-t', /^\d/);
@@ -33,9 +26,8 @@ test('the opening animation plays once and can be skipped', async ({ page }) => 
   await expect(page.locator('[data-intro-t]')).toHaveAttribute('data-intro-t', 'done');
 });
 
-test('signing out returns to the sign-in page', async ({ page }) => {
-  await signIn(page);
-  await page.getByRole('button', { name: /^Account/ }).click();
-  await page.getByRole('menuitem', { name: 'Sign out' }).click();
-  await expect(page).toHaveURL(/\/login/);
+test('legacy sign-in URL returns to the root dashboard', async ({ page }) => {
+  await page.goto('/login');
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', { name: 'Moving zones' })).toBeVisible();
 });

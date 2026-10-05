@@ -17,8 +17,8 @@ function patchNodes(qc, patchById) {
   );
 }
 
-/** One socket for the signed-in session; server pushes go straight into the query cache. */
-export function useLiveUpdates({ enabled, onAuthLost }) {
+/** One public socket connection; server pushes go straight into the query cache. */
+export function useLiveUpdates({ enabled }) {
   const qc = useQueryClient();
 
   useEffect(() => {
@@ -101,11 +101,10 @@ export function useLiveUpdates({ enabled, onAuthLost }) {
       siteId: SITE_ID,
       handlers,
       onState: live.setConn,
-      onAuthLost,
     });
     return () => {
       clearInterval(clock);
       disconnect();
     };
-  }, [enabled, qc, onAuthLost]);
+  }, [enabled, qc]);
 }

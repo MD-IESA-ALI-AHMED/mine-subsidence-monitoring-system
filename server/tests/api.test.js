@@ -19,6 +19,12 @@ beforeAll(async () => {
 afterAll(stopDb);
 
 describe('read API over the seeded site', () => {
+  it('serves dashboard data without an authenticated session', async () => {
+    const res = await request(createApp()).get('/api/system/status?siteId=site-01');
+    expect(res.status).toBe(200);
+    expect(res.body.status._id).toBe('site-01');
+  });
+
   it('lists 60 nodes with latest values and status', async () => {
     const res = await agent.get('/api/nodes?siteId=site-01');
     expect(res.status).toBe(200);
@@ -125,7 +131,7 @@ describe('alerts', () => {
       .send({ note: 'Inspected on site, cordon placed' });
     expect(ok.status).toBe(200);
     expect(ok.body.alert.state).toBe('acknowledged');
-    expect(ok.body.alert.acknowledgedBy).toBe('Duty Engineer');
+    expect(ok.body.alert.acknowledgedBy).toBe('Public user');
     const open = await agent.get('/api/alerts?state=open');
     expect(open.body.alerts.find((a) => a._id === String(alert._id))).toBeUndefined();
   });

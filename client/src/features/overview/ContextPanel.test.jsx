@@ -12,8 +12,6 @@ import { ContextPanel } from './ContextPanel.jsx';
 vi.mock('../../services/api.js', () => ({
   api: { get: () => new Promise(() => {}), post: () => new Promise(() => {}) },
   errorMessage: (e) => String(e),
-  refreshSession: () => new Promise(() => {}),
-  setAuthLostHandler: () => {},
 }));
 
 // jsdom has no canvas: uPlot is replaced by a stub that records nothing.

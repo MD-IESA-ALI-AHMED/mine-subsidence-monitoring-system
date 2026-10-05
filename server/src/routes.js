@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { isReady } from './bootstrapState.js';
 import { asyncHandler } from './middleware/asyncHandler.js';
-import { requireAuth } from './middleware/auth.js';
 import { apiLimiter } from './middleware/rateLimit.js';
 import { alertRoutes } from './modules/alerts/routes.js';
 import { authRoutes } from './modules/auth/routes.js';
@@ -16,7 +15,7 @@ import { zoneRoutes } from './modules/zones/routes.js';
 import { getHealth } from './modules/system/health.js';
 import { systemRoutes } from './modules/system/routes.js';
 
-/** Mounts every module router under /api. Everything except auth, health and ingest needs a session. */
+/** Mounts the public dashboard API; data ingestion still requires its API key. */
 export function apiRouter() {
   const router = Router();
   router.get(
@@ -30,7 +29,7 @@ export function apiRouter() {
   router.use('/auth', authRoutes());
   router.use('/ingest', ingestRoutes());
 
-  const secured = {
+  const publicRoutes = {
     '/system': systemRoutes(),
     '/sites': siteRoutes(),
     '/nodes': nodeRoutes(),
@@ -41,8 +40,8 @@ export function apiRouter() {
     '/alerts': alertRoutes(),
     '/export': exportRoutes(),
   };
-  for (const [prefix, routes] of Object.entries(secured)) {
-    router.use(prefix, apiLimiter, requireAuth, routes);
+  for (const [prefix, routes] of Object.entries(publicRoutes)) {
+    router.use(prefix, apiLimiter, routes);
   }
   return router;
 }

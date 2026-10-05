@@ -28,7 +28,7 @@ export function exportRoutes() {
       const { siteId, nodeIds, from, to } = req.query;
       const filename = exportFilename(siteId, nodeIds, from, to);
       await recordAudit({
-        userId: req.user.id,
+        userId: req.user?.id,
         action: 'export_csv',
         target: filename,
         details: { nodeIds, from, to },

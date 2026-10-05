@@ -8,7 +8,6 @@ import { useUiStore } from '../../store/uiStore.js';
 import { IconButton } from '../../ui/Button.jsx';
 import { formatTime } from '../../utils/time.js';
 import { StatusStrip } from './StatusStrip.jsx';
-import { UserMenu } from './UserMenu.jsx';
 import s from './TopBar.module.css';
 
 const NAV = [
@@ -93,7 +92,6 @@ export function TopBar() {
           label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
           onClick={toggle}
         />
-        <UserMenu />
       </div>
     </header>
   );

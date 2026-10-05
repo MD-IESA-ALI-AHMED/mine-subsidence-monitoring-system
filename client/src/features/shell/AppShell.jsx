@@ -1,6 +1,5 @@
-import { useCallback, useEffect } from 'react';
-import { useQueryClient } from '@tanstack/react-query';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import { useLiveUpdates } from '../../hooks/useLiveUpdates.js';
 import { useStatus } from '../../services/queries.js';
 import { useLiveStore } from '../../store/liveStore.js';
@@ -12,18 +11,10 @@ import s from './AppShell.module.css';
 
 /** Top bar + page. Owns the live connection for the signed-in session. */
 export function AppShell() {
-  const qc = useQueryClient();
-  const navigate = useNavigate();
   const location = useLocation();
   const { data: status } = useStatus();
   const introUi = useIntroUi(location.pathname === '/');
-
-  const onAuthLost = useCallback(() => {
-    qc.clear();
-    navigate(`/login?next=${encodeURIComponent(location.pathname)}`, { replace: true });
-  }, [qc, navigate, location.pathname]);
-
-  useLiveUpdates({ enabled: true, onAuthLost });
+  useLiveUpdates({ enabled: true });
 
   useEffect(() => {
     if (status?.siteClock) {

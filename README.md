@@ -46,8 +46,7 @@ On the first start the server finds an empty database. It loads the dummy site (
 replays the pipeline over the 7-day history (about 20 s), then starts the live simulator. Watch
 for `Simulator running` in the log. After that, one real second is one simulated minute.
 
-Open http://localhost:5173 and sign in as `demo@site01.local` with your `DEMO_PASSWORD`.
-Changing `DEMO_PASSWORD` later takes effect on the next server start.
+Open http://localhost:5173 to go directly to the public dashboard. No sign-in is required.
 
 ## Using the dashboard
 
@@ -65,20 +64,16 @@ plays or pauses the scrubber · `,` `.` step it 10 minutes.
 
 ## Using the API directly
 
-The API uses httpOnly cookies, so use a cookie jar:
+Dashboard API endpoints are public. Data ingestion still requires the configured API key:
 
 ```bash
-curl -c jar -H "content-type: application/json" \
-  -d '{"email":"demo@site01.local","password":"YOUR_DEMO_PASSWORD"}' \
-  http://localhost:4000/api/auth/login
-
-curl -b jar http://localhost:4000/api/system/status      # mesh, root, model, gate, site clock
-curl -b jar "http://localhost:4000/api/zones?active=true" # moving zones with score, tier, time to limit
-curl -b jar "http://localhost:4000/api/alerts?state=open"
-curl -b jar http://localhost:4000/api/nodes/N-038         # one node, mesh path to root
-curl -b jar "http://localhost:4000/api/nodes/N-037/readings?fields=sinking_mm,speed_mmPerDay"
-curl -b jar "http://localhost:4000/api/sites/site-01/terrain?res=8"
-curl -b jar -o n037.csv "http://localhost:4000/api/export/readings.csv?nodeIds=N-037&from=2026-09-27T00:00:00Z&to=2026-09-29T00:00:00Z"
+curl http://localhost:4000/api/system/status      # mesh, root, model, gate, site clock
+curl "http://localhost:4000/api/zones?active=true" # moving zones with score, tier, time to limit
+curl "http://localhost:4000/api/alerts?state=open"
+curl http://localhost:4000/api/nodes/N-038         # one node, mesh path to root
+curl "http://localhost:4000/api/nodes/N-037/readings?fields=sinking_mm,speed_mmPerDay"
+curl "http://localhost:4000/api/sites/site-01/terrain?res=8"
+curl -o n037.csv "http://localhost:4000/api/export/readings.csv?nodeIds=N-037&from=2026-09-27T00:00:00Z&to=2026-09-29T00:00:00Z"
 curl http://localhost:4000/api/system/health             # no sign-in needed
 ```
 
@@ -121,7 +116,7 @@ server/
   src/services/      field (Knothe + terrain grid), gate, zones (ST-DBSCAN), inverseVelocity,
                      severity, modelClient, pipeline, simulator, seed
   src/mockModel/     separate Express app implementing POST /predict
-  src/realtime/      Socket.IO: cookie auth, per-site rooms, 4 messages/s throttle
+  src/realtime/      Socket.IO: public per-site rooms, 4 messages/s throttle
 client/   Vite + React (phase 1 shell so far)
 ```
 
